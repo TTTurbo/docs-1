@@ -1,0 +1,1434 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>XuperChain RPC 接口使用说明 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="XuperIDE 使用文档" href="XuperIDE.html" />
+    <link rel="prev" title="智能合约开发详解" href="XdevManual.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/perfomance.html">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trusted_ledger_intro.html">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/trusted_ledger_design.html">可信账本</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/create_contracts.html">创建合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="XuperCDT.html">智能合约SDK使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XuperChain RPC 接口使用说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rpc">RPC接口介绍</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getbalance">GetBalance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getbalancedetail">GetBalanceDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getfrozenbalance">GetFrozenBalance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getblock">GetBlock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getblockbyheight">GetBlockByHeight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getblockchainstatus">GetBlockChainStatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getblockchains">GetBlockChains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getsystemstatus">GetSystemStatus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getneturl">GetNetURL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#queryacl">QueryACL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#querytx">QueryTx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selectutxo">SelectUTXO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selectutxobysize">SelectUTXOBySize</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preexec">PreExec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preexecwithselectutxo">PreExecWithSelectUTXO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#posttx">PostTx</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">RPC接口应用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">发起一次转账</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">新建合约账号</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acl">修改合约账号ACL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">部署一个合约</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wasm">执行一个wasm合约</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/description.html">XuperChain 测试环境说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">XuperChain RPC 接口使用说明</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/development_manuals/XuperRPC.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xuperchain-rpc">
+<h1>XuperChain RPC 接口使用说明<a class="headerlink" href="#xuperchain-rpc" title="永久链接至标题">¶</a></h1>
+<p>XuperChain为方便用户深度使用 XuperChain 的各项功能，提供了多语言版本的SDK（<a class="reference external" href="https://github.com/xuperchain/xuper-sdk-js">JS</a>，<a class="reference external" href="https://github.com/xuperchain/xuper-sdk-go">Golang</a>，<a class="reference external" href="https://github.com/xuperchain/xuper-sdk-csharp">C#</a>，<a class="reference external" href="https://github.com/xuperchain/xuper-java-sdk">Java</a>，<a class="reference external" href="https://github.com/xuperchain/xuper-python-sdk">Python</a>），这里我们以Golang为例来介绍一下XuperChain的RPC接口使用方式。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>目前官方提供的SDK中，golang语言版本的功能最为全面，其他语言的功能弱一些，我们非常欢迎社区朋友一起建设SDK，参与贡献会获得开放网络的资源，可用于购买开放网络的服务。</p>
+</div>
+<div class="section" id="rpc">
+<h2>RPC接口介绍<a class="headerlink" href="#rpc" title="永久链接至标题">¶</a></h2>
+<p>查看XuperChain的 <a class="reference external" href="https://github.com/xuperchain/xuperchain/blob/master/core/pb/xchain.proto">proto文件</a> ，可以在service定义中获取所有支持的RPC接口</p>
+<div class="section" id="getbalance">
+<h3>GetBalance<a class="headerlink" href="#getbalance" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定地址中的余额</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>AddressStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>AddressStatus</p></td>
+</tr>
+</tbody>
+</table>
+<p>这里 AddressStatus 的定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">AddressStatus</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="k">repeated</span> <span class="n">TokenDetail</span> <span class="na">bcs</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>其中的 address 字段为需要查询的地址，传入string即可</p>
+<p>其中的 bcs 字段为需要查询的链名，因为XuperChain支持平行链的功能，此字段为列表，亦可传入多个链名，</p>
+<p>TokenDetail 定义如下：</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">TokenDetail</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">balance</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="n">XChainErrorEnum</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>请求时只需传入 bcname 字段，例如 “xuper”，其余字段为返回时携带的，balance即为对应平行链上的余额</p>
+<p>其中的 Header 如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">Header</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="kt">string</span> <span class="na">logid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">from_node</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="n">XChainErrorEnum</span> <span class="na">error</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Header中的logid是回复中也会携带的id，用来对应请求或追溯日志使用的，一般用 core/global/common.go 中的 Glogid() 生成一个全局唯一id</p>
+<p>Header中的from_node一般不需要填写，error字段也是返回中携带的错误内容，发请求时不需填写</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">opts</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithInsecure</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithMaxMsgSize</span><span class="p">(</span><span class="mi">64</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;127.0.0.1:37101&quot;</span><span class="p">,</span> <span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">cli</span> <span class="o">:=</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">NewXchainClient</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nx">bc</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TokenDetail</span><span class="p">{</span>
+<span class="linenos"> 8</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">AddressStatus</span><span class="p">{</span>
+<span class="linenos">11</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">12</span>    <span class="nx">Address</span><span class="p">:</span> <span class="s">&quot;dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN&quot;</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="nx">Bcs</span><span class="p">:</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TokenDetail</span><span class="p">{</span><span class="nx">bc</span><span class="p">},</span>
+<span class="linenos">14</span><span class="p">}</span>
+<span class="linenos">15</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">GetBalance</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getbalancedetail">
+<h3>GetBalanceDetail<a class="headerlink" href="#getbalancedetail" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定地址中的余额详细情况</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>AddressBalanceStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>AddressBalanceStatus</p></td>
+</tr>
+</tbody>
+</table>
+<p>AddressBalanceStatus 定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">AddressBalanceStatus</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="k">repeated</span> <span class="n">TokenFrozenDetails</span> <span class="na">tfds</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>address字段与GetBalance一样，tfds字段则多了是否冻结的内容，tfds在请求中只需要填充bcname，返回时会有TokenFrozenDetail数组给出正常余额和冻结余额的信息</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">opts</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithInsecure</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithMaxMsgSize</span><span class="p">(</span><span class="mi">64</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;127.0.0.1:37101&quot;</span><span class="p">,</span> <span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">cli</span> <span class="o">:=</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">NewXchainClient</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nx">tfd</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TokenFrozenDetails</span><span class="p">{</span>
+<span class="linenos"> 8</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">AddressBalanceStatus</span><span class="p">{</span>
+<span class="linenos">11</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">12</span>    <span class="nx">Address</span><span class="p">:</span> <span class="s">&quot;dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN&quot;</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="nx">Tfds</span><span class="p">:</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TokenFrozenDetails</span><span class="p">{</span><span class="nx">bc</span><span class="p">},</span>
+<span class="linenos">14</span><span class="p">}</span>
+<span class="linenos">15</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">GetBalanceDetail</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getfrozenbalance">
+<h3>GetFrozenBalance<a class="headerlink" href="#getfrozenbalance" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定地址中的冻结余额，请求方式与GetBalance完全一致，这里不再赘述</p>
+</div>
+<div class="section" id="getblock">
+<h3>GetBlock<a class="headerlink" href="#getblock" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定id的区块内容</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 47%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>BlockID</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>Block</p></td>
+</tr>
+</tbody>
+</table>
+<p>BlockID 定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">BlockID</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">bytes</span> <span class="na">blockid</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="kt">bool</span> <span class="na">need_content</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>  <span class="c1">//是否需要内容</span>
+<span class="linenos">6</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>header和bcname字段如上所述，blocked为要查询的区块id，注意是bytes类型，可能需要hex decode</p>
+<p>need_content字段为布尔值，表明是否需要详细的区块内容（还是只查询区块是否在链和前驱后继）</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">opts</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithInsecure</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithMaxMsgSize</span><span class="p">(</span><span class="mi">64</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;127.0.0.1:37101&quot;</span><span class="p">,</span> <span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">cli</span> <span class="o">:=</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">NewXchainClient</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nx">id</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">hex</span><span class="p">.</span><span class="nx">DecodeString</span><span class="p">(</span><span class="s">&quot;ee0d6fd34df4a7e1540df309d47441af4fda6fdd9d841046f18e7680fe0cea8c&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">BlockID</span><span class="p">{</span>
+<span class="linenos"> 9</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">10</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">11</span>    <span class="nx">Blockid</span><span class="p">:</span> <span class="nx">id</span><span class="p">,</span>
+<span class="linenos">12</span>    <span class="nx">NeedContent</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos">13</span><span class="p">}</span>
+<span class="linenos">14</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">GetBlock</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getblockbyheight">
+<h3>GetBlockByHeight<a class="headerlink" href="#getblockbyheight" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定高度的区块内容</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>BlockHeight</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>Block</p></td>
+</tr>
+</tbody>
+</table>
+<p>BlockHeight定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">BlockHeight</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">int64</span> <span class="na">height</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>同GetBlock类似，id换成整型的高度即可，返回内容也是类似的</p>
+</div>
+<div class="section" id="getblockchainstatus">
+<h3>GetBlockChainStatus<a class="headerlink" href="#getblockchainstatus" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定链的当前状态</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>BCStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>BCStatus</p></td>
+</tr>
+</tbody>
+</table>
+<p>BCStatus定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">BCStatus</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="n">LedgerMeta</span> <span class="na">meta</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="n">InternalBlock</span> <span class="na">block</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">6</span>    <span class="n">UtxoMeta</span> <span class="na">utxoMeta</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">7</span>    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">branchBlockid</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>传入参数只需填充header，bcname即可</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">opts</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithInsecure</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithMaxMsgSize</span><span class="p">(</span><span class="mi">64</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;127.0.0.1:37101&quot;</span><span class="p">,</span> <span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">cli</span> <span class="o">:=</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">NewXchainClient</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">BCStatus</span><span class="p">{</span>
+<span class="linenos"> 8</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 9</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">10</span><span class="p">}</span>
+<span class="linenos">11</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">GetBlockChainStatus</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getblockchains">
+<h3>GetBlockChains<a class="headerlink" href="#getblockchains" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询当前节点上有哪些链</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>CommonIn</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>BlockChains</p></td>
+</tr>
+</tbody>
+</table>
+<p>CommonIn结构很简单，只有header字段，返回的BlockChains也仅有一个链名的string数组</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nx">opts</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="nx">grpc</span><span class="p">.</span><span class="nx">DialOption</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 2</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithInsecure</span><span class="p">())</span>
+<span class="linenos"> 3</span><span class="nx">opts</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">opts</span><span class="p">,</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">WithMaxMsgSize</span><span class="p">(</span><span class="mi">64</span><span class="o">&lt;&lt;</span><span class="mi">20</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">grpc</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;127.0.0.1:37101&quot;</span><span class="p">,</span> <span class="nx">opts</span><span class="o">...</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">cli</span> <span class="o">:=</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">NewXchainClient</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">CommonIn</span><span class="p">{</span>
+<span class="linenos"> 8</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">GetBlockChains</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="getsystemstatus">
+<h3>GetSystemStatus<a class="headerlink" href="#getsystemstatus" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询当前节点的运行状态</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>CommonIn</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>SystemsStatusReply</p></td>
+</tr>
+</tbody>
+</table>
+<p>此接口相当于先查询了GetBlockChains，在用GetBlockChainStatus查询每个链的状态，不在赘述</p>
+</div>
+<div class="section" id="getneturl">
+<h3>GetNetURL<a class="headerlink" href="#getneturl" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询当前节点的netUrl</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>CommonIn</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>RawUrl</p></td>
+</tr>
+</tbody>
+</table>
+<p>RawUrl除了header字段外仅有一个string字段，表示返回的netURL</p>
+</div>
+<div class="section" id="queryacl">
+<h3>QueryACL<a class="headerlink" href="#queryacl" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定合约账号的ACL内容</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 52%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>AclStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>AclStatus</p></td>
+</tr>
+</tbody>
+</table>
+<p>AclStatus定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">AclStatus</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">string</span> <span class="na">accountName</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="kt">string</span> <span class="na">contractName</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">6</span>    <span class="kt">string</span> <span class="na">methodName</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">7</span>    <span class="kt">bool</span> <span class="na">confirmed</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="linenos">8</span>    <span class="n">Acl</span> <span class="na">acl</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>请求中仅需填充header，bcname，accountName即可，其余为返回内容</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">AclStatus</span><span class="p">{</span>
+<span class="linenos">2</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">3</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">4</span>    <span class="nx">AccountName</span><span class="p">:</span> <span class="s">&quot;XC1111111111111111@xuper&quot;</span><span class="p">,</span>
+<span class="linenos">5</span><span class="p">}</span>
+<span class="linenos">6</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">QueryACL</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="querytx">
+<h3>QueryTx<a class="headerlink" href="#querytx" title="永久链接至标题">¶</a></h3>
+<p>此接口用于查询指定id的交易内容</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>TxStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>TxStatus</p></td>
+</tr>
+</tbody>
+</table>
+<p>TxStatus定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">TxStatus</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">bytes</span> <span class="na">txid</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="n">TransactionStatus</span> <span class="na">status</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>  <span class="c1">//当前状态</span>
+<span class="linenos">6</span>    <span class="kt">int64</span> <span class="na">distance</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">//离主干末端的距离（如果在主干上)</span>
+<span class="linenos">7</span>    <span class="n">Transaction</span> <span class="na">tx</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>请求中仅需填充header，bcname，txid字段</p>
+<p>以下为Golang示例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">id</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">hex</span><span class="p">.</span><span class="nx">DecodeString</span><span class="p">(</span><span class="s">&quot;763ac8212c80b8789cefd049f1529eafe292f4d64eaffbc2d5fe19c79062a484&quot;</span><span class="p">)</span>
+<span class="linenos">2</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">AclStatus</span><span class="p">{</span>
+<span class="linenos">3</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">4</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">5</span>    <span class="nx">Txid</span><span class="p">:</span> <span class="nx">id</span><span class="p">,</span>
+<span class="linenos">6</span><span class="p">}</span>
+<span class="linenos">7</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">QueryTx</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selectutxo">
+<h3>SelectUTXO<a class="headerlink" href="#selectutxo" title="永久链接至标题">¶</a></h3>
+<p>此接口用于获取账号可用的utxo列表</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>UtxoInput</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>UtxoOutput</p></td>
+</tr>
+</tbody>
+</table>
+<p>UtxoInput定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">message</span> <span class="nc">UtxoInput</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 3</span>    <span class="c1">// which bcname to select</span>
+<span class="linenos"> 4</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos"> 5</span>    <span class="c1">// address to select</span>
+<span class="linenos"> 6</span>    <span class="kt">string</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="c1">// publickey of the address</span>
+<span class="linenos"> 8</span>    <span class="kt">string</span> <span class="na">publickey</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos"> 9</span>    <span class="c1">// totalNeed refer the total need utxos to select</span>
+<span class="linenos">10</span>    <span class="kt">string</span> <span class="na">totalNeed</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">11</span>    <span class="c1">// userSign of input</span>
+<span class="linenos">12</span>    <span class="kt">bytes</span> <span class="na">userSign</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="linenos">13</span>    <span class="c1">// need lock</span>
+<span class="linenos">14</span>    <span class="kt">bool</span> <span class="na">needLock</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="linenos">15</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>请求中只需填充header，bcname，address，totalNeed，needLock，其中needLock表示是否需要锁定utxo（适用于并发执行场景）</p>
+<p>UtxoOutput中的返回即可在组装交易时使用，具体组装交易的过程可参考文档下方</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">in</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">UtxoInput</span><span class="p">{</span>
+<span class="linenos">2</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos">3</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">4</span>    <span class="nx">Address</span><span class="p">:</span> <span class="s">&quot;dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN&quot;</span><span class="p">,</span>
+<span class="linenos">5</span>    <span class="nx">TotalNeed</span><span class="p">:</span> <span class="s">&quot;50&quot;</span><span class="p">,</span>
+<span class="linenos">6</span>    <span class="nx">NeedLock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos">7</span><span class="p">}</span>
+<span class="linenos">8</span><span class="nx">out</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">SelectUTXO</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">in</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selectutxobysize">
+<h3>SelectUTXOBySize<a class="headerlink" href="#selectutxobysize" title="永久链接至标题">¶</a></h3>
+<p>此接口用于获取账号中部分utxo，填满交易后便不在继续获取</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>UtxoInput</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>UtxoOutput</p></td>
+</tr>
+</tbody>
+</table>
+<p>使用过程和SelectUTXO基本相同，仅少了totalNeed字段。适用拥有太多utxo，一次SelectUtxo内容超过交易容纳上限时使用</p>
+</div>
+<div class="section" id="preexec">
+<h3>PreExec<a class="headerlink" href="#preexec" title="永久链接至标题">¶</a></h3>
+<p>此接口用于在节点上进行合约的预执行操作，返回预执行后的请求和回复</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 66%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>InvokeRPCRequest</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>InvokeRPCResponse</p></td>
+</tr>
+</tbody>
+</table>
+<p>InvokeRPCRequest定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">InvokeRPCRequest</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span><span class="n">InvokeRequest</span>
+<span class="linenos">4</span>    <span class="k">repeated</span>  <span class="na">requests</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="kt">string</span> <span class="na">initiator</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">6</span>    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">auth_require</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">7</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>其中的InvokeRequest定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">InvokeRequest</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="kt">string</span> <span class="na">module_name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">contract_name</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">string</span> <span class="na">method_name</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="n">map</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">bytes</span><span class="p">&gt;</span> <span class="na">args</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">6</span>    <span class="k">repeated</span> <span class="n">ResourceLimit</span> <span class="na">resource_limits</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">7</span>    <span class="kt">string</span> <span class="na">amount</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="linenos">8</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>其中必填字段有module_name，contract_name，method_name，args，具体示例可参见下一章节</p>
+</div>
+<div class="section" id="preexecwithselectutxo">
+<h3>PreExecWithSelectUTXO<a class="headerlink" href="#preexecwithselectutxo" title="永久链接至标题">¶</a></h3>
+<p>此接口用于在节点上进行消耗资源的合约预执行操作，内部是由一个PreExec加上一个SelectUTXO实现的，预执行并选择出需要消耗数额的utxo</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>PreExecWithSelectUTXORequest</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>PreExecWithSelectUTXOResponse</p></td>
+</tr>
+</tbody>
+</table>
+<p>PreExecWithSelectUTXORequest定义如下，实际上就是把预执行的请求结构放在了SelectUTXO结构中</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kd">message</span> <span class="nc">PreExecWithSelectUTXORequest</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="n">Header</span> <span class="na">header</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">3</span>    <span class="kt">string</span> <span class="na">bcname</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos">4</span>    <span class="kt">string</span> <span class="na">address</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos">5</span>    <span class="kt">int64</span> <span class="na">totalAmount</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">6</span>    <span class="n">SignatureInfo</span> <span class="na">signInfo</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="linenos">7</span>    <span class="kt">bool</span> <span class="na">needLock</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="linenos">8</span>    <span class="n">InvokeRPCRequest</span> <span class="na">request</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="linenos">9</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>具体填充方式可参考下一章节</p>
+</div>
+<div class="section" id="posttx">
+<h3>PostTx<a class="headerlink" href="#posttx" title="永久链接至标题">¶</a></h3>
+<p>此接口用于提交交易，是大部分操作都需要的最终环节</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>参数结构</p></td>
+<td><p>TxStatus</p></td>
+</tr>
+<tr class="row-even"><td><p>返回结构</p></td>
+<td><p>CommonReply</p></td>
+</tr>
+</tbody>
+</table>
+<p>请求结构TxStatus定义在QueryTx中已经给出，但提交交易时需要填充Transaction字段，定义如下</p>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">message</span> <span class="nc">Transaction</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="c1">// txid is the id of this transaction</span>
+<span class="linenos"> 3</span>    <span class="kt">bytes</span> <span class="na">txid</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 4</span>    <span class="c1">// the blockid the transaction belong to</span>
+<span class="linenos"> 5</span>    <span class="kt">bytes</span> <span class="na">blockid</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos"> 6</span>    <span class="c1">// Transaction input list</span>
+<span class="linenos"> 7</span>    <span class="k">repeated</span> <span class="n">TxInput</span> <span class="na">tx_inputs</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="c1">// Transaction output list</span>
+<span class="linenos"> 9</span>    <span class="k">repeated</span> <span class="n">TxOutput</span> <span class="na">tx_outputs</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="linenos">10</span>    <span class="c1">// Transaction description or system contract</span>
+<span class="linenos">11</span>    <span class="kt">bytes</span> <span class="na">desc</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="linenos">12</span>    <span class="c1">// Mining rewards</span>
+<span class="linenos">13</span>    <span class="kt">bool</span> <span class="na">coinbase</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="linenos">14</span>    <span class="c1">// Random number used to avoid replay attacks</span>
+<span class="linenos">15</span>    <span class="kt">string</span> <span class="na">nonce</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="linenos">16</span>    <span class="c1">// Timestamp to launch the transaction</span>
+<span class="linenos">17</span>    <span class="kt">int64</span> <span class="na">timestamp</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="linenos">18</span>    <span class="c1">// tx format version; tx格式版本号</span>
+<span class="linenos">19</span>    <span class="kt">int32</span> <span class="na">version</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="linenos">20</span>    <span class="c1">// auto generated tx</span>
+<span class="linenos">21</span>    <span class="kt">bool</span> <span class="na">autogen</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+<span class="linenos">22</span>    <span class="k">repeated</span> <span class="n">TxInputExt</span> <span class="na">tx_inputs_ext</span> <span class="o">=</span> <span class="mi">23</span><span class="p">;</span>
+<span class="linenos">23</span>    <span class="k">repeated</span> <span class="n">TxOutputExt</span> <span class="na">tx_outputs_ext</span> <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+<span class="linenos">24</span>    <span class="k">repeated</span> <span class="n">InvokeRequest</span> <span class="na">contract_requests</span> <span class="o">=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="linenos">25</span>    <span class="c1">// 权限系统新增字段</span>
+<span class="linenos">26</span>    <span class="c1">// 交易发起者, 可以是一个Address或者一个Account</span>
+<span class="linenos">27</span>    <span class="kt">string</span> <span class="na">initiator</span> <span class="o">=</span> <span class="mi">26</span><span class="p">;</span>
+<span class="linenos">28</span>    <span class="c1">// 交易发起需要被收集签名的AddressURL集合信息，包括用于utxo转账和用于合约调用</span>
+<span class="linenos">29</span>    <span class="k">repeated</span> <span class="kt">string</span> <span class="na">auth_require</span> <span class="o">=</span> <span class="mi">27</span><span class="p">;</span>
+<span class="linenos">30</span>    <span class="c1">// 交易发起者对交易元数据签名，签名的内容包括auth_require字段</span>
+<span class="linenos">31</span>    <span class="k">repeated</span> <span class="n">SignatureInfo</span> <span class="na">initiator_signs</span> <span class="o">=</span> <span class="mi">28</span><span class="p">;</span>
+<span class="linenos">32</span>    <span class="c1">// 收集到的签名</span>
+<span class="linenos">33</span>    <span class="k">repeated</span> <span class="n">SignatureInfo</span> <span class="na">auth_require_signs</span> <span class="o">=</span> <span class="mi">29</span><span class="p">;</span>
+<span class="linenos">34</span>    <span class="c1">// 节点收到tx的时间戳，不参与签名</span>
+<span class="linenos">35</span>    <span class="kt">int64</span> <span class="na">received_timestamp</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+<span class="linenos">36</span>    <span class="c1">// 统一签名(支持多重签名/环签名等，与initiator_signs/auth_require_signs不同时使用)</span>
+<span class="linenos">37</span>    <span class="n">XuperSignature</span> <span class="na">xuper_sign</span> <span class="o">=</span> <span class="mi">31</span><span class="p">;</span>
+<span class="linenos">38</span>    <span class="c1">// 可修改区块链标记</span>
+<span class="linenos">39</span>    <span class="n">ModifyBlock</span> <span class="na">modify_block</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+<span class="linenos">40</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Transaction属于XuperChain中比较核心的结构了，下一章我们将介绍各种场景的交易如何构造并提交</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>RPC接口应用<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>本章节将以几个简单的场景为例描述RPC接口的使用方法，主要体现逻辑和步骤。代码中仅使用了原始的RPC接口，如果使用SDK则会简便很多。</p>
+<div class="section" id="id2">
+<h3>发起一次转账<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h3>
+<p>这里我们演示如何使用RPC接口实现从账号Aclie向账号Bob的一次数额为10的转账，为了进行此操作，我们事先需要有以下信息（均为string）</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Alice的地址</p></td>
+<td><p>addr_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的公钥</p></td>
+<td><p>pub_alice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alice的私钥</p></td>
+<td><p>pri_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Bob的地址</p></td>
+<td><p>addr_bob</p></td>
+</tr>
+</tbody>
+</table>
+<p>发起转账交易的总体逻辑为，首先通过SelectUTXO获取Alice数额为10的资产，然后构造交易，最后通过PostTx提交</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 获取Alice的utxo</span>
+<span class="linenos"> 2</span><span class="nx">utxoreq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">UtxoInput</span><span class="p">{</span>
+<span class="linenos"> 3</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 4</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span>    <span class="nx">Address</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 6</span>    <span class="nx">TotalNeed</span><span class="p">:</span> <span class="s">&quot;10&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>    <span class="nx">NeedLock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 8</span><span class="p">}</span>
+<span class="linenos"> 9</span><span class="nx">utxorsp</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">SelectUTXO</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">utxoreq</span><span class="p">)</span>
+<span class="linenos">10</span><span class="c1">// 声明一个交易，发起者为Alice地址，因为是转账，所以Desc字段什么都不填</span>
+<span class="linenos">11</span><span class="c1">// 如果是提案等操作，将客户端的 --desc 参数写进去即可</span>
+<span class="linenos">12</span><span class="nx">tx</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">Transaction</span><span class="p">{</span>
+<span class="linenos">13</span>    <span class="nx">Version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">14</span>    <span class="nx">Coinbase</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="linenos">15</span>    <span class="nx">Desc</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">),</span>
+<span class="linenos">16</span>    <span class="nx">Nonce</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">GenNonce</span><span class="p">(),</span>
+<span class="linenos">17</span>    <span class="nx">Timestamp</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">UnixNano</span><span class="p">(),</span>
+<span class="linenos">18</span>    <span class="nx">Initiator</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos">19</span><span class="p">}</span>
+<span class="linenos">20</span><span class="c1">// 填充交易的输入，即Select出来的Alice的utxo</span>
+<span class="linenos">21</span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">utxo</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">utxorsp</span><span class="p">.</span><span class="nx">UtxoList</span> <span class="p">{</span>
+<span class="linenos">22</span>    <span class="nx">txin</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxInput</span><span class="p">{</span>
+<span class="linenos">23</span>        <span class="nx">RefTxid</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefTxid</span><span class="p">,</span>
+<span class="linenos">24</span>        <span class="nx">RefOffset</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefOffset</span><span class="p">,</span>
+<span class="linenos">25</span>        <span class="nx">FromAddr</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">ToAddr</span><span class="p">,</span>
+<span class="linenos">26</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">Amount</span><span class="p">,</span>
+<span class="linenos">27</span>    <span class="p">}</span>
+<span class="linenos">28</span>    <span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span><span class="p">,</span> <span class="nx">txin</span><span class="p">)</span>
+<span class="linenos">29</span><span class="p">}</span>
+<span class="linenos">30</span><span class="c1">// 填充交易的输出，即给Bob的utxo，注意Amount字段的类型</span>
+<span class="linenos">31</span><span class="nx">amount</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetString</span><span class="p">(</span><span class="s">&quot;10&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="linenos">32</span><span class="nx">txout</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos">33</span>    <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">addr_bob</span><span class="p">),</span>
+<span class="linenos">34</span>    <span class="nx">Amount</span><span class="p">:</span> <span class="nx">amount</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">(),</span>
+<span class="linenos">35</span><span class="p">}</span>
+<span class="linenos">36</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span><span class="p">,</span> <span class="nx">txout</span><span class="p">)</span>
+<span class="linenos">37</span><span class="c1">// 如果Select出来的Alice的utxo多于10，需要构造一个给Alice的找零</span>
+<span class="linenos">38</span><span class="nx">total</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetString</span><span class="p">(</span><span class="nx">utxorsp</span><span class="p">.</span><span class="nx">TotalSelected</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="linenos">39</span><span class="k">if</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Cmp</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+<span class="linenos">40</span>    <span class="nx">delta</span> <span class="o">:=</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Sub</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span>
+<span class="linenos">41</span>    <span class="nx">charge</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos">42</span>        <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">addr_alice</span><span class="p">),</span>
+<span class="linenos">43</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">delta</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">(),</span>
+<span class="linenos">44</span>    <span class="p">}</span>
+<span class="linenos">45</span>    <span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span><span class="p">,</span> <span class="nx">charge</span><span class="p">)</span>
+<span class="linenos">46</span><span class="p">}</span>
+<span class="linenos">47</span><span class="c1">// 接下来用Alice的私钥对交易进行签名，在此交易中，我们只需Alice签名确认即可</span>
+<span class="linenos">48</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span><span class="p">,</span> <span class="nx">addr_alice</span><span class="p">)</span>
+<span class="linenos">49</span><span class="c1">// 签名需要的库在 github.com/xuperchain/xuperchain/core/crypto/client</span>
+<span class="linenos">50</span><span class="c1">// 和 github.com/xuperchain/xuperchain/core/crypto/hash</span>
+<span class="linenos">51</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">CreateCryptoClient</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">)</span>
+<span class="linenos">52</span><span class="nx">sign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">ProcessSignTx</span><span class="p">(</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">tx</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos">53</span><span class="nx">signInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos">54</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos">55</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">sign</span><span class="p">,</span>
+<span class="linenos">56</span><span class="p">}</span>
+<span class="linenos">57</span><span class="c1">// 将签名填充进交易</span>
+<span class="linenos">58</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span><span class="p">,</span> <span class="nx">signInfo</span><span class="p">)</span>
+<span class="linenos">59</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span><span class="p">,</span> <span class="nx">signInfo</span><span class="p">)</span>
+<span class="linenos">60</span><span class="c1">// 生成交易ID</span>
+<span class="linenos">61</span><span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">MakeTransactionID</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+<span class="linenos">62</span><span class="c1">// 构造最终要Post的TxStatus</span>
+<span class="linenos">63</span><span class="nx">txs</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxStatus</span><span class="p">{</span>
+<span class="linenos">64</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">65</span>    <span class="nx">Status</span><span class="p">:</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">TransactionStatus_UNCONFIRM</span><span class="p">,</span>
+<span class="linenos">66</span>    <span class="nx">Tx</span><span class="p">:</span> <span class="nx">tx</span><span class="p">,</span>
+<span class="linenos">67</span>    <span class="nx">Txid</span><span class="p">:</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span>
+<span class="linenos">68</span><span class="p">}</span>
+<span class="linenos">69</span><span class="c1">// 最后一步，执行PostTx</span>
+<span class="linenos">70</span><span class="nx">rsp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PostTx</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">txs</span><span class="p">)</span>
+<span class="linenos">71</span><span class="c1">// 这里的rsp即CommonReply，包含logid等内容</span>
+<span class="linenos">72</span><span class="c1">// 交易id我们已经生成在tx.Txid中，不过是bytes，输出可能需要hex.EncodeToString一下</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3>新建合约账号<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
+<p>这里我们演示创建一个合约账号 <a class="reference external" href="mailto:XC1234567812345678&#37;&#52;&#48;xuper">XC1234567812345678<span>&#64;</span>xuper</a> ，ACL如下</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="s2">&quot;pm&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 3</span>        <span class="s2">&quot;rule&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 4</span>        <span class="s2">&quot;acceptValue&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="linenos"> 5</span>    <span class="p">},</span>
+<span class="linenos"> 6</span>    <span class="s2">&quot;aksWeight&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 7</span>        <span class="s2">&quot;XXXaddress-aliceXXX&quot;</span> <span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+<span class="linenos"> 8</span>        <span class="s2">&quot;XXXXaddress-bobXXXX&quot;</span> <span class="p">:</span> <span class="mf">0.4</span>
+<span class="linenos"> 9</span>    <span class="p">}</span>
+<span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>为了进行此操作，我们事先需要有以下信息</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Alice的地址</p></td>
+<td><p>addr_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的公钥</p></td>
+<td><p>pub_alice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alice的私钥</p></td>
+<td><p>pri_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>ACL的内容</p></td>
+<td><p>acct_acl</p></td>
+</tr>
+</tbody>
+</table>
+<p>创建合约账号的总体逻辑为，首先进行创建合约账号的预执行，然后构造相应的交易内容（如果需要支付资源由Alice出），最后提交交易</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">// 构造创建合约账号的请求</span>
+<span class="linenos">  2</span><span class="nx">args</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">byte</span><span class="p">)</span>
+<span class="linenos">  3</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;account_name&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="mi">1234567812345678</span><span class="p">)</span>
+<span class="linenos">  4</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;acl&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">acct_acl</span><span class="p">)</span>
+<span class="linenos">  5</span><span class="nx">invokereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span>
+<span class="linenos">  6</span>    <span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&quot;xkernel&quot;</span><span class="p">,</span>
+<span class="linenos">  7</span>    <span class="nx">MethodName</span><span class="p">:</span> <span class="s">&quot;NewAccount&quot;</span><span class="p">,</span>
+<span class="linenos">  8</span>    <span class="nx">Args</span><span class="p">:</span> <span class="nx">args</span><span class="p">,</span>
+<span class="linenos">  9</span><span class="p">}</span>
+<span class="linenos"> 10</span><span class="nx">invokereqs</span> <span class="o">:=</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span><span class="nx">invokereq</span><span class="p">}</span>
+<span class="linenos"> 11</span><span class="c1">// 构造合约预执行的请求</span>
+<span class="linenos"> 12</span><span class="nx">authrequire</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="nx">addr_alice</span><span class="p">}</span>
+<span class="linenos"> 13</span><span class="nx">rpcreq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRPCRequest</span><span class="p">{</span>
+<span class="linenos"> 14</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 15</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 16</span>    <span class="nx">Requests</span><span class="p">:</span> <span class="nx">invokereqs</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="nx">Initiator</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 18</span>    <span class="nx">AuthRequire</span><span class="p">:</span> <span class="nx">authrequire</span><span class="p">,</span>
+<span class="linenos"> 19</span><span class="p">}</span>
+<span class="linenos"> 20</span><span class="c1">// 花手续费需要出资的账号确认，填充一个验证的签名，才能正确的拿出utxo来</span>
+<span class="linenos"> 21</span><span class="c1">// 签名需要的库在 github.com/xuperchain/xuperchain/core/crypto/client</span>
+<span class="linenos"> 22</span><span class="c1">// 和 github.com/xuperchain/xuperchain/core/crypto/hash</span>
+<span class="linenos"> 23</span><span class="nx">content</span> <span class="o">:=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">DoubleSha256</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;xuper&quot;</span> <span class="o">+</span> <span class="nx">addr_alice</span> <span class="o">+</span> <span class="s">&quot;0&quot;</span> <span class="o">+</span> <span class="s">&quot;true&quot;</span><span class="p">))</span>
+<span class="linenos"> 24</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">CreateCryptoClient</span><span class="p">(</span><span class="s">&quot;default&quot;</span><span class="p">)</span>
+<span class="linenos"> 25</span><span class="nx">prikey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cryptoCli</span><span class="p">.</span><span class="nx">GetEcdsaPrivateKeyFromJSON</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos"> 26</span><span class="nx">sign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cryptoCli</span><span class="p">.</span><span class="nx">SignECDSA</span><span class="p">(</span><span class="nx">prikey</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span>
+<span class="linenos"> 27</span><span class="nx">signInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos"> 28</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos"> 29</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">sign</span><span class="p">,</span>
+<span class="linenos"> 30</span><span class="p">}</span>
+<span class="linenos"> 31</span><span class="c1">// 组合一个PreExecWithSelectUTXORequest用来预执行同时拿出需要支付的Alice的utxo</span>
+<span class="linenos"> 32</span><span class="nx">prereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">PreExecWithSelectUTXORequest</span><span class="p">{</span>
+<span class="linenos"> 33</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 34</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 35</span>    <span class="nx">Address</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 36</span>    <span class="nx">TotalAmount</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 37</span>    <span class="nx">SignInfo</span><span class="p">:</span> <span class="nx">signInfo</span><span class="p">,</span>
+<span class="linenos"> 38</span>    <span class="nx">NeedLock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 39</span>    <span class="nx">Request</span><span class="p">:</span> <span class="nx">rpcreq</span><span class="p">,</span>
+<span class="linenos"> 40</span><span class="p">}</span>
+<span class="linenos"> 41</span><span class="nx">prersp</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PreExecWithSelectUTXO</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">prereq</span><span class="p">)</span>
+<span class="linenos"> 42</span><span class="c1">// 构造一个Alice发起的交易</span>
+<span class="linenos"> 43</span><span class="nx">tx</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">Transaction</span><span class="p">{</span>
+<span class="linenos"> 44</span>    <span class="nx">Version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 45</span>    <span class="nx">Coinbase</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="linenos"> 46</span>    <span class="nx">Desc</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">),</span>
+<span class="linenos"> 47</span>    <span class="nx">Nonce</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">GenNonce</span><span class="p">(),</span>
+<span class="linenos"> 48</span>    <span class="nx">Timestamp</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">UnixNano</span><span class="p">(),</span>
+<span class="linenos"> 49</span>    <span class="nx">Initiator</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 50</span><span class="p">}</span>
+<span class="linenos"> 51</span><span class="c1">// 填充支付的手续费，手续费需要“转账”给地址“$”</span>
+<span class="linenos"> 52</span><span class="nx">amount</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="nx">prersp</span><span class="p">.</span><span class="nx">Response</span><span class="p">.</span><span class="nx">GasUsed</span><span class="p">)</span>
+<span class="linenos"> 53</span><span class="nx">fee</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos"> 54</span>    <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span>
+<span class="linenos"> 55</span>    <span class="nx">Amount</span><span class="p">:</span> <span class="nx">amount</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">(),</span>
+<span class="linenos"> 56</span><span class="p">}</span>
+<span class="linenos"> 57</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span><span class="p">,</span> <span class="nx">fee</span><span class="p">)</span>
+<span class="linenos"> 58</span><span class="c1">// 填充select出来的Alice的utxo</span>
+<span class="linenos"> 59</span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">utxo</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">UtxoOutput</span><span class="p">.</span><span class="nx">UtxoList</span> <span class="p">{</span>
+<span class="linenos"> 60</span>    <span class="nx">txin</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxInput</span><span class="p">{</span>
+<span class="linenos"> 61</span>        <span class="nx">RefTxid</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefTxid</span><span class="p">,</span>
+<span class="linenos"> 62</span>        <span class="nx">RefOffset</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefOffset</span><span class="p">,</span>
+<span class="linenos"> 63</span>        <span class="nx">FromAddr</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">ToAddr</span><span class="p">,</span>
+<span class="linenos"> 64</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">Amount</span><span class="p">,</span>
+<span class="linenos"> 65</span>    <span class="p">}</span>
+<span class="linenos"> 66</span>    <span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span><span class="p">,</span> <span class="nx">txin</span><span class="p">)</span>
+<span class="linenos"> 67</span><span class="p">}</span>
+<span class="linenos"> 68</span><span class="c1">// 处理找零的逻辑</span>
+<span class="linenos"> 69</span><span class="nx">total</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetString</span><span class="p">(</span><span class="nx">prersp</span><span class="p">.</span><span class="nx">UtxoOutput</span><span class="p">.</span><span class="nx">TotalSelected</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="linenos"> 70</span><span class="k">if</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Cmp</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+<span class="linenos"> 71</span>    <span class="nx">delta</span> <span class="o">:=</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Sub</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span>
+<span class="linenos"> 72</span>    <span class="nx">charge</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos"> 73</span>        <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">addr_alice</span><span class="p">),</span>
+<span class="linenos"> 74</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">delta</span><span class="p">,</span>
+<span class="linenos"> 75</span>    <span class="p">}</span>
+<span class="linenos"> 76</span><span class="p">}</span>
+<span class="linenos"> 77</span><span class="c1">// 填充预执行的结果</span>
+<span class="linenos"> 78</span><span class="nx">tx</span><span class="p">.</span><span class="nx">ContractRequests</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetRequests</span><span class="p">()</span>
+<span class="linenos"> 79</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetInputs</span><span class="p">()</span>
+<span class="linenos"> 80</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetOutputs</span><span class="p">()</span>
+<span class="linenos"> 81</span><span class="c1">// 给交易签名</span>
+<span class="linenos"> 82</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span><span class="p">,</span> <span class="nx">addr_alice</span><span class="p">)</span>
+<span class="linenos"> 83</span><span class="nx">txsign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">ProcessSignTx</span><span class="p">(</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">tx</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos"> 84</span><span class="nx">txsignInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos"> 85</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos"> 86</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">txsign</span><span class="p">,</span>
+<span class="linenos"> 87</span><span class="p">}</span>
+<span class="linenos"> 88</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span><span class="p">,</span> <span class="nx">txsignInfo</span><span class="p">)</span>
+<span class="linenos"> 89</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span><span class="p">,</span> <span class="nx">txsignInfo</span><span class="p">)</span>
+<span class="linenos"> 90</span><span class="c1">// 生成交易ID</span>
+<span class="linenos"> 91</span><span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">MakeTransactionID</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+<span class="linenos"> 92</span><span class="c1">// 构造最终要Post的TxStatus</span>
+<span class="linenos"> 93</span><span class="nx">txs</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxStatus</span><span class="p">{</span>
+<span class="linenos"> 94</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 95</span>    <span class="nx">Status</span><span class="p">:</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">TransactionStatus_UNCONFIRM</span><span class="p">,</span>
+<span class="linenos"> 96</span>    <span class="nx">Tx</span><span class="p">:</span> <span class="nx">tx</span><span class="p">,</span>
+<span class="linenos"> 97</span>    <span class="nx">Txid</span><span class="p">:</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span>
+<span class="linenos"> 98</span><span class="p">}</span>
+<span class="linenos"> 99</span><span class="c1">// 最后一步，执行PostTx</span>
+<span class="linenos">100</span><span class="nx">rsp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PostTx</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">txs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="acl">
+<h3>修改合约账号ACL<a class="headerlink" href="#acl" title="永久链接至标题">¶</a></h3>
+<p>延续上一小节的例子，假设我们要把ACL修改成以下状态</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="s2">&quot;pm&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 3</span>        <span class="s2">&quot;rule&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 4</span>        <span class="s2">&quot;acceptValue&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+<span class="linenos"> 5</span>    <span class="p">},</span>
+<span class="linenos"> 6</span>    <span class="s2">&quot;aksWeight&quot;</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 7</span>        <span class="s2">&quot;XXXaddress-aliceXXX&quot;</span> <span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+<span class="linenos"> 8</span>        <span class="s2">&quot;XXXXaddress-bobXXXX&quot;</span> <span class="p">:</span> <span class="mf">1.0</span>
+<span class="linenos"> 9</span>    <span class="p">}</span>
+<span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>为了进行此操作，我们事先需要有以下信息</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Alice的地址</p></td>
+<td><p>addr_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的公钥</p></td>
+<td><p>pub_alice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alice的私钥</p></td>
+<td><p>pri_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Bob的地址</p></td>
+<td><p>addr_bob</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bob的公钥</p></td>
+<td><p>pub_bob</p></td>
+</tr>
+<tr class="row-even"><td><p>Bob的私钥</p></td>
+<td><p>pri_bob</p></td>
+</tr>
+<tr class="row-odd"><td><p>新ACL的内容</p></td>
+<td><p>new_acl</p></td>
+</tr>
+</tbody>
+</table>
+<p>修改ACL的总体逻辑为，首先进行修改的预执行，然后构造交易发送，这里需要注意的是，修改ACL操作需要满足现有的ACL要求才有权限，即Alice Bob都需要签名确认。简单起见，当中的手续费依然由Alice支付。</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 构造修改ACL的请求</span>
+<span class="linenos"> 2</span><span class="nx">args</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">byte</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;account_name&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="mi">1234567812345678</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;acl&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">new_acl</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nx">invokereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span>
+<span class="linenos"> 6</span>    <span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&quot;xkernel&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>    <span class="nx">MethodName</span><span class="p">:</span> <span class="s">&quot;SetAccountAcl&quot;</span><span class="p">,</span>
+<span class="linenos"> 8</span>    <span class="nx">Args</span><span class="p">:</span> <span class="nx">args</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">invokereqs</span> <span class="o">:=</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span><span class="nx">invokereq</span><span class="p">}</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="c1">// 构造合约预执行的请求，和上一节一样，此处省略</span>
+<span class="linenos">13</span><span class="c1">///////////////////////////////////////////////</span>
+<span class="linenos">14</span><span class="c1">// 花手续费需要出资的账号确认，填充验证的签名，和上一节一样，此处省略</span>
+<span class="linenos">15</span><span class="c1">/////////////////////////////////////////////////////////////////////</span>
+<span class="linenos">16</span><span class="c1">// 按上一节逻辑一样，填充花费、找零，然后填充预执行的结果</span>
+<span class="linenos">17</span><span class="nx">tx</span><span class="p">.</span><span class="nx">ContractRequests</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetRequests</span><span class="p">()</span>
+<span class="linenos">18</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetInputs</span><span class="p">()</span>
+<span class="linenos">19</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetOutputs</span><span class="p">()</span>
+<span class="linenos">20</span><span class="c1">// 给交易签名需要原ACL里的多个账号了</span>
+<span class="linenos">21</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span><span class="p">,</span> <span class="nx">addr_alice</span><span class="p">)</span>
+<span class="linenos">22</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span><span class="p">,</span> <span class="nx">addr_bob</span><span class="p">)</span>
+<span class="linenos">23</span><span class="nx">alicesign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">ProcessSignTx</span><span class="p">(</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">tx</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos">24</span><span class="nx">alicesignInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos">25</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos">26</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">alicesign</span><span class="p">,</span>
+<span class="linenos">27</span><span class="p">}</span>
+<span class="linenos">28</span><span class="nx">bobsign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">ProcessSignTx</span><span class="p">(</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">tx</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_bob</span><span class="p">))</span>
+<span class="linenos">29</span><span class="nx">bobsignInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos">30</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_bob</span><span class="p">,</span>
+<span class="linenos">31</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">bobsign</span><span class="p">,</span>
+<span class="linenos">32</span><span class="p">}</span>
+<span class="linenos">33</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span><span class="p">,</span> <span class="nx">alicesignInfo</span><span class="p">)</span>
+<span class="linenos">34</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span><span class="p">,</span> <span class="nx">alicesignInfo</span><span class="p">)</span>
+<span class="linenos">35</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span><span class="p">,</span> <span class="nx">bobsignInfo</span><span class="p">)</span>
+<span class="linenos">36</span><span class="c1">// 然后和上一节一致了，生成交易ID</span>
+<span class="linenos">37</span><span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">MakeTransactionID</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+<span class="linenos">38</span><span class="c1">// 构造最终要Post的TxStatus</span>
+<span class="linenos">39</span><span class="nx">txs</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxStatus</span><span class="p">{</span>
+<span class="linenos">40</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">41</span>    <span class="nx">Status</span><span class="p">:</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">TransactionStatus_UNCONFIRM</span><span class="p">,</span>
+<span class="linenos">42</span>    <span class="nx">Tx</span><span class="p">:</span> <span class="nx">tx</span><span class="p">,</span>
+<span class="linenos">43</span>    <span class="nx">Txid</span><span class="p">:</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span>
+<span class="linenos">44</span><span class="p">}</span>
+<span class="linenos">45</span><span class="c1">// 最后一步，执行PostTx</span>
+<span class="linenos">46</span><span class="nx">rsp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PostTx</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">txs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>部署一个合约<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>这里我们演示使用合约账号 <a class="reference external" href="mailto:XC1234567812345678&#37;&#52;&#48;xuper">XC1234567812345678<span>&#64;</span>xuper</a> 部署一个C++的counter合约，init参数为{“creator”:”xchain”}，假设合约账号的ACL是修改过的版本</p>
+<p>为了进行此操作，我们事先需要有以下信息</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>合约文件字节内容</p></td>
+<td><p>contract_code</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的地址</p></td>
+<td><p>addr_alice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alice的公钥</p></td>
+<td><p>pub_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的私钥</p></td>
+<td><p>pri_alice</p></td>
+</tr>
+</tbody>
+</table>
+<p>部署合约的总体逻辑为，首先构造deploy操作预执行，部署需要的手续费由合约账号出，需要的签名由Alice提供（因为一个签名就满足ACL了）</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="c1">// 构造部署合约的请求，关注args的内容，基本上和使用xchain-cli一致</span>
+<span class="linenos">  2</span><span class="nx">args</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">byte</span><span class="p">)</span>
+<span class="linenos">  3</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;account_name&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;XC1234567812345678@xuper&quot;</span><span class="p">)</span>
+<span class="linenos">  4</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;contract_name&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;counter&quot;</span><span class="p">)</span>
+<span class="linenos">  5</span><span class="c1">// github.com/golang/protobuf/proto</span>
+<span class="linenos">  6</span><span class="nx">codedesc</span> <span class="o">:=</span> <span class="nx">desc</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">WasmCodeDesc</span><span class="p">{</span>
+<span class="linenos">  7</span>    <span class="nx">Runtime</span><span class="p">:</span> <span class="s">&quot;c&quot;</span><span class="p">,</span>
+<span class="linenos">  8</span><span class="p">}</span>
+<span class="linenos">  9</span><span class="nx">desc</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">proto</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">codedesc</span><span class="p">)</span>
+<span class="linenos"> 10</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;contract_desc&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">desc</span>
+<span class="linenos"> 11</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;contract_code&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">contract_code</span>
+<span class="linenos"> 12</span><span class="nx">initarg</span> <span class="o">:=</span> <span class="s">`{&quot;creator&quot;:&quot;`</span> <span class="o">+</span> <span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nx">EncodeToString</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;xchain&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="s">`&quot;}`</span>
+<span class="linenos"> 13</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;init_args&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">initarg</span><span class="p">)</span>
+<span class="linenos"> 14</span><span class="nx">invokereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span>
+<span class="linenos"> 15</span>    <span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&quot;xkernel&quot;</span><span class="p">,</span>
+<span class="linenos"> 16</span>    <span class="nx">MethodName</span><span class="p">:</span> <span class="s">&quot;Deploy&quot;</span><span class="p">,</span>
+<span class="linenos"> 17</span>    <span class="nx">Args</span><span class="p">:</span> <span class="nx">args</span><span class="p">,</span>
+<span class="linenos"> 18</span><span class="p">}</span>
+<span class="linenos"> 19</span><span class="nx">invokereqs</span> <span class="o">:=</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span><span class="nx">invokereq</span><span class="p">}</span>
+<span class="linenos"> 20</span><span class="c1">// 这里预执行的authrequire格式为 XC1234567812345678@xuper/dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN，</span>
+<span class="linenos"> 21</span><span class="c1">// 表示是“某个合约账号的股东”，与直接写账号地址含义是不同的，ACL需求多个签名的时候即多个“股东”</span>
+<span class="linenos"> 22</span><span class="nx">authrequires</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;XC1234567812345678@xuper/XXXaddress-aliceXXX&quot;</span><span class="p">}</span>
+<span class="linenos"> 23</span><span class="nx">rpcreq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRPCRequest</span><span class="p">{</span>
+<span class="linenos"> 24</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 25</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 26</span>    <span class="nx">Requests</span><span class="p">:</span> <span class="nx">invokereqs</span><span class="p">,</span>
+<span class="linenos"> 27</span>    <span class="nx">Initiator</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 28</span>    <span class="nx">AuthRequire</span><span class="p">:</span> <span class="nx">authrequires</span><span class="p">,</span>
+<span class="linenos"> 29</span><span class="p">}</span>
+<span class="linenos"> 30</span><span class="c1">// SelectUTXO的目标是合约账号中的余额，出资账号签名中的地址变成了合约账号，与“创建账号”小节有区别</span>
+<span class="linenos"> 31</span><span class="nx">content</span> <span class="o">:=</span> <span class="nx">hash</span><span class="p">.</span><span class="nx">DoubleSha256</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;xuper&quot;</span> <span class="o">+</span> <span class="s">&quot;XC1234567812345678@xuper&quot;</span> <span class="o">+</span> <span class="s">&quot;0&quot;</span> <span class="o">+</span> <span class="s">&quot;true&quot;</span><span class="p">))</span>
+<span class="linenos"> 32</span><span class="nx">prikey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cryptoCli</span><span class="p">.</span><span class="nx">GetEcdsaPrivateKeyFromJSON</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos"> 33</span><span class="nx">sign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cryptoCli</span><span class="p">.</span><span class="nx">SignECDSA</span><span class="p">(</span><span class="nx">prikey</span><span class="p">,</span> <span class="nx">content</span><span class="p">)</span>
+<span class="linenos"> 34</span><span class="nx">signInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos"> 35</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos"> 36</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">sign</span><span class="p">,</span>
+<span class="linenos"> 37</span><span class="p">}</span>
+<span class="linenos"> 38</span><span class="c1">// 组合一个PreExecWithSelectUTXORequest用来预执行同时拿出需要支付的合约账号的utxo</span>
+<span class="linenos"> 39</span><span class="nx">prereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">PreExecWithSelectUTXORequest</span><span class="p">{</span>
+<span class="linenos"> 40</span>    <span class="nx">Header</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">Glogid</span><span class="p">(),</span>
+<span class="linenos"> 41</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 42</span>    <span class="nx">Address</span><span class="p">:</span> <span class="s">&quot;XC1234567812345678@xuper&quot;</span><span class="p">,</span>
+<span class="linenos"> 43</span>    <span class="nx">TotalAmount</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="linenos"> 44</span>    <span class="nx">SignInfo</span><span class="p">:</span> <span class="nx">signInfo</span><span class="p">,</span>
+<span class="linenos"> 45</span>    <span class="nx">NeedLock</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 46</span>    <span class="nx">Request</span><span class="p">:</span> <span class="nx">rpcreq</span><span class="p">,</span>
+<span class="linenos"> 47</span><span class="p">}</span>
+<span class="linenos"> 48</span><span class="nx">prersp</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PreExecWithSelectUTXO</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">prereq</span><span class="p">)</span>
+<span class="linenos"> 49</span><span class="c1">// 构造一个Alice发起的交易</span>
+<span class="linenos"> 50</span><span class="nx">tx</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">Transaction</span><span class="p">{</span>
+<span class="linenos"> 51</span>    <span class="nx">Version</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos"> 52</span>    <span class="nx">Coinbase</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+<span class="linenos"> 53</span>    <span class="nx">Desc</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">),</span>
+<span class="linenos"> 54</span>    <span class="nx">Nonce</span><span class="p">:</span> <span class="nx">global</span><span class="p">.</span><span class="nx">GenNonce</span><span class="p">(),</span>
+<span class="linenos"> 55</span>    <span class="nx">Timestamp</span><span class="p">:</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">().</span><span class="nx">UnixNano</span><span class="p">(),</span>
+<span class="linenos"> 56</span>    <span class="nx">Initiator</span><span class="p">:</span> <span class="nx">addr_alice</span><span class="p">,</span>
+<span class="linenos"> 57</span><span class="p">}</span>
+<span class="linenos"> 58</span><span class="c1">// 填充支付的手续费，手续费需要“转账”给地址“$”</span>
+<span class="linenos"> 59</span><span class="nx">amount</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="nx">prersp</span><span class="p">.</span><span class="nx">Response</span><span class="p">.</span><span class="nx">GasUsed</span><span class="p">)</span>
+<span class="linenos"> 60</span><span class="nx">fee</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos"> 61</span>    <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;$&quot;</span><span class="p">),</span>
+<span class="linenos"> 62</span>    <span class="nx">Amount</span><span class="p">:</span> <span class="nx">amount</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">(),</span>
+<span class="linenos"> 63</span><span class="p">}</span>
+<span class="linenos"> 64</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputs</span><span class="p">,</span> <span class="nx">fee</span><span class="p">)</span>
+<span class="linenos"> 65</span><span class="c1">// 填充select出来的Alice的utxo</span>
+<span class="linenos"> 66</span><span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">utxo</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">UtxoOutput</span><span class="p">.</span><span class="nx">UtxoList</span> <span class="p">{</span>
+<span class="linenos"> 67</span>    <span class="nx">txin</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxInput</span><span class="p">{</span>
+<span class="linenos"> 68</span>        <span class="nx">RefTxid</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefTxid</span><span class="p">,</span>
+<span class="linenos"> 69</span>        <span class="nx">RefOffset</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">RefOffset</span><span class="p">,</span>
+<span class="linenos"> 70</span>        <span class="nx">FromAddr</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">ToAddr</span><span class="p">,</span>
+<span class="linenos"> 71</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">utxo</span><span class="p">.</span><span class="nx">Amount</span><span class="p">,</span>
+<span class="linenos"> 72</span>    <span class="p">}</span>
+<span class="linenos"> 73</span>    <span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputs</span><span class="p">,</span> <span class="nx">txin</span><span class="p">)</span>
+<span class="linenos"> 74</span><span class="p">}</span>
+<span class="linenos"> 75</span><span class="c1">// 处理找零的逻辑</span>
+<span class="linenos"> 76</span><span class="nx">total</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">big</span><span class="p">.</span><span class="nx">NewInt</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">SetString</span><span class="p">(</span><span class="nx">prersp</span><span class="p">.</span><span class="nx">UtxoOutput</span><span class="p">.</span><span class="nx">TotalSelected</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="linenos"> 77</span><span class="k">if</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Cmp</span><span class="p">(</span><span class="nx">amount</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+<span class="linenos"> 78</span>    <span class="nx">delta</span> <span class="o">:=</span> <span class="nx">total</span><span class="p">.</span><span class="nx">Sub</span><span class="p">(</span><span class="nx">total</span><span class="p">,</span> <span class="nx">amount</span><span class="p">)</span>
+<span class="linenos"> 79</span>    <span class="nx">charge</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxOutput</span><span class="p">{</span>
+<span class="linenos"> 80</span>        <span class="nx">ToAddr</span><span class="p">:</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;XC1234567812345678@xuper&quot;</span><span class="p">),</span>
+<span class="linenos"> 81</span>        <span class="nx">Amount</span><span class="p">:</span> <span class="nx">delta</span><span class="p">,</span>
+<span class="linenos"> 82</span>    <span class="p">}</span>
+<span class="linenos"> 83</span><span class="p">}</span>
+<span class="linenos"> 84</span><span class="c1">// 填充预执行的结果</span>
+<span class="linenos"> 85</span><span class="nx">tx</span><span class="p">.</span><span class="nx">ContractRequests</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetRequests</span><span class="p">()</span>
+<span class="linenos"> 86</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxInputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetInputs</span><span class="p">()</span>
+<span class="linenos"> 87</span><span class="nx">tx</span><span class="p">.</span><span class="nx">TxOutputsExt</span> <span class="p">=</span> <span class="nx">prersp</span><span class="p">.</span><span class="nx">GetResponse</span><span class="p">().</span><span class="nx">GetOutputs</span><span class="p">()</span>
+<span class="linenos"> 88</span><span class="c1">// 给交易签名，此处也是以“股东”身份签名</span>
+<span class="linenos"> 89</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequire</span><span class="p">,</span> <span class="s">&quot;XC1234567812345678@xuper/XXXaddress-aliceXXX&quot;</span><span class="p">)</span>
+<span class="linenos"> 90</span><span class="nx">txsign</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">ProcessSignTx</span><span class="p">(</span><span class="nx">cryptoCli</span><span class="p">,</span> <span class="nx">tx</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">pri_alice</span><span class="p">))</span>
+<span class="linenos"> 91</span><span class="nx">txsignInfo</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">SignatureInfo</span><span class="p">{</span>
+<span class="linenos"> 92</span>    <span class="nx">PublicKey</span><span class="p">:</span> <span class="nx">pub_alice</span><span class="p">,</span>
+<span class="linenos"> 93</span>    <span class="nx">Sign</span><span class="p">:</span> <span class="nx">txsign</span><span class="p">,</span>
+<span class="linenos"> 94</span><span class="p">}</span>
+<span class="linenos"> 95</span><span class="c1">// 虽然Alice和“股东Alice”含义不同，但签名的私钥是一样的</span>
+<span class="linenos"> 96</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">InitiatorSigns</span><span class="p">,</span> <span class="nx">signInfo</span><span class="p">)</span>
+<span class="linenos"> 97</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tx</span><span class="p">.</span><span class="nx">AuthRequireSigns</span><span class="p">,</span> <span class="nx">signInfo</span><span class="p">)</span>
+<span class="linenos"> 98</span><span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">txhash</span><span class="p">.</span><span class="nx">MakeTransactionID</span><span class="p">(</span><span class="nx">tx</span><span class="p">)</span>
+<span class="linenos"> 99</span><span class="c1">// 构造最终要Post的TxStatus</span>
+<span class="linenos">100</span><span class="nx">txs</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">TxStatus</span><span class="p">{</span>
+<span class="linenos">101</span>    <span class="nx">Bcname</span><span class="p">:</span> <span class="s">&quot;xuper&quot;</span><span class="p">,</span>
+<span class="linenos">102</span>    <span class="nx">Status</span><span class="p">:</span> <span class="nx">pb</span><span class="p">.</span><span class="nx">TransactionStatus_UNCONFIRM</span><span class="p">,</span>
+<span class="linenos">103</span>    <span class="nx">Tx</span><span class="p">:</span> <span class="nx">tx</span><span class="p">,</span>
+<span class="linenos">104</span>    <span class="nx">Txid</span><span class="p">:</span> <span class="nx">tx</span><span class="p">.</span><span class="nx">Txid</span><span class="p">,</span>
+<span class="linenos">105</span><span class="p">}</span>
+<span class="linenos">106</span><span class="c1">// 最后一步，执行PostTx</span>
+<span class="linenos">107</span><span class="nx">rsp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">cli</span><span class="p">.</span><span class="nx">PostTx</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nx">Background</span><span class="p">(),</span> <span class="nx">txs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wasm">
+<h3>执行一个wasm合约<a class="headerlink" href="#wasm" title="永久链接至标题">¶</a></h3>
+<p>这里我们演示使用Alice账号调用上一节部署的counter合约，执行 increase 方法，参数为 {“key”: “example”}</p>
+<p>为了进行此操作，我们事先需要有以下信息</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Alice的地址</p></td>
+<td><p>addr_alice</p></td>
+</tr>
+<tr class="row-even"><td><p>Alice的公钥</p></td>
+<td><p>pub_alice</p></td>
+</tr>
+<tr class="row-odd"><td><p>Alice的私钥</p></td>
+<td><p>pri_alice</p></td>
+</tr>
+</tbody>
+</table>
+<p>执行合约的总体逻辑为，首先构造相应预执行请求并预执行，如果是查询，那么直接读预执行结果即可，如果是要调用上链的操作，使用预执行结果组建交易并发送</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 构造执行合约的请求</span>
+<span class="linenos"> 2</span><span class="nx">args</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">][]</span><span class="kt">byte</span><span class="p">)</span>
+<span class="linenos"> 3</span><span class="nx">args</span><span class="p">[</span><span class="s">&quot;key&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;example&quot;</span><span class="p">)</span>
+<span class="linenos"> 4</span><span class="nx">invokereq</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span>
+<span class="linenos"> 5</span>    <span class="nx">ModuleName</span><span class="p">:</span> <span class="s">&quot;wasm&quot;</span><span class="p">,</span>
+<span class="linenos"> 6</span>    <span class="nx">MethodName</span><span class="p">:</span> <span class="s">&quot;increase&quot;</span><span class="p">,</span>
+<span class="linenos"> 7</span>    <span class="nx">ContractName</span><span class="p">:</span> <span class="s">&quot;counter&quot;</span><span class="p">,</span>
+<span class="linenos"> 8</span>    <span class="nx">Args</span><span class="p">:</span> <span class="nx">args</span><span class="p">,</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="nx">invokereqs</span> <span class="o">:=</span> <span class="p">[]</span><span class="o">*</span><span class="nx">pb</span><span class="p">.</span><span class="nx">InvokeRequest</span><span class="p">{</span><span class="nx">invokereq</span><span class="p">}</span>
+<span class="linenos">11</span><span class="c1">// 其他内容和“创建合约账号”一节完全一致</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="XuperIDE.html" class="btn btn-neutral float-right" title="XuperIDE 使用文档" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="XdevManual.html" class="btn btn-neutral float-left" title="智能合约开发详解" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

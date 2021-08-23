@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>XuperChain 测试环境说明 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="XuperChain 测试环境使用指南" href="guides.html" />
+    <link rel="prev" title="XuperIDE 使用文档" href="../development_manuals/XuperIDE.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/perfomance.html">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trusted_ledger_intro.html">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/trusted_ledger_design.html">可信账本</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/create_contracts.html">创建合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperCDT.html">智能合约SDK使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperRPC.html">XuperChain RPC 接口使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">XuperChain 测试环境说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#xuperchain-xuperchain-testnet">XuperChain 公开测试环境（XuperChain-testnet）</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">测试环境使用场景</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fee">测试环境资源</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dev">测试环境开发方式</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">如何接入</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">如何开发智能合约</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">用户使用条款</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">XuperChain 测试环境说明</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/test_network/description.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="xuperchain">
+<span id="description"></span><h1>XuperChain 测试环境说明<a class="headerlink" href="#xuperchain" title="永久链接至标题">¶</a></h1>
+<p>区块链是信任的连接器， 通过区块链可以做到很多之前中心化信息系统做不到的事情，使得参与者可以凭借这个“连接器”完成成可信环境的构建和价值的安全流转。然而，目前多数公链的性能和安全不足以支撑各行各业的诸多场景，XuperChain 是百度自主研发的区块链技术，目前已启动测试环境对外公开测试，欢迎各界开发者使用我们的产品并且提出宝贵意见。</p>
+<div class="section" id="xuperchain-xuperchain-testnet">
+<span id="test-net"></span><h2>XuperChain 公开测试环境（XuperChain-testnet）<a class="headerlink" href="#xuperchain-xuperchain-testnet" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>XuperChain 公开测试环境是 XuperChain 许可开放网络的测试版本，目前 XuperChain 测试环境已经实现了 XuperChain 的主要功能，为 XuperChain 早期用户和开发者提供一个可供使用的测试环境。</p>
+</div></blockquote>
+<p>用户可以在 XuperChain 测试环境上测试部署和使用智能合约等功能，用户可以通过开源代码直接开发及平台化操作两种方式获取测试环境资源以及开发智能合约。</p>
+</div>
+<div class="section" id="usage">
+<span id="id1"></span><h2>测试环境使用场景<a class="headerlink" href="#usage" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>XuperChain 测试环境 <strong>适用于</strong> ：</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>创建测试账号，更为方便的按照教程尝试使用。</p></li>
+<li><p>开发测试智能合约，而无需担心影响真实数据资产。</p></li>
+<li><p>XuperChain 新版本上线前的兼容性升级、功能测试等。</p></li>
+</ul>
+<blockquote>
+<div><p>XuperChain 测试环境 <strong>不适用于</strong> ：</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>压力测试：如果有压力测试需求，请在自行搭建的测试环境上实验，数据会更准确。</p></li>
+<li><p>可用性测试：测试环境并不保证高可用性，可能在某些情况下出现短暂的服务不可用。</p></li>
+<li><p>长期数据存储：测试环境不保证数据长期有效，可能在系统bug、不兼容升级、遭受攻击等情况下，会重置甚至关闭测试环境。我们会尽量保障用户数据不丢失，但在测试环境重置或关闭时，用户可能并不会得到通知，链上数据也可能无法找回。</p></li>
+</ul>
+</div>
+<div class="section" id="fee">
+<span id="id2"></span><h2>测试环境资源<a class="headerlink" href="#fee" title="永久链接至标题">¶</a></h2>
+<p>用户在测试环境部署和调用合约需要使用并且消耗测试资源。</p>
+<p>目前测试环境获取测试资源会有以下两种方式：</p>
+<ul class="simple">
+<li><p>通过 XuperChain 公开网络渠道微信群、邮箱等等获取测试资质并领取定量测试资源；</p></li>
+<li><p>批量资源获取可邮件联系：<a class="reference external" href="http://xuper.baidu.com">xuper.baidu.com</a> 。</p></li>
+</ul>
+<p>测试资源仅用于测试环境消耗计算，只在测试环境上有效，没有任何经济价值和法律效力，也不支持用于任何形式的交易。如果测试环境因为遭受攻击、不兼容升级等情况下重建时，我们会尽量恢复用户账号中持有的测试资源。</p>
+</div>
+<div class="section" id="dev">
+<span id="id3"></span><h2>测试环境开发方式<a class="headerlink" href="#dev" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>如何接入<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>测试环境通过RPC方式提供服务，开发者可以在github获取源代码，按照README说明编译得到cli客户端。</p>
+<p>测试环境接入地址：<strong>14.215.179.74:37101</strong></p>
+<p>开发者只需要在使用xchain-cli时，通过-H参数指定测试环境地址，即可将客户端命令发送到测试环境。 例如查询账号测试资源：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>./xchain-cli account balance dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN -H <span class="m">14</span>.215.179.74:37101
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>如何开发智能合约<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>开发者需要首先创建合约账号，合约账号必须消耗一定的测试资源，用于部署合约。</p>
+<p>更多关于测试环境使用的方法，请参见 <a class="reference external" href="guides.html">测试环境使用指南</a> 。</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>用户使用条款<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>XuperChain 用户在使用公开测试环境期间，不得访问或使用本网站采取任何可能损害我们或者任何第三方的行为，干扰本网络的运营或者以违反任何法律的方式使用本网络的行为， XuperChain 有权删除相关数据或者追究法律责任，包括但不限于：</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>分享任何违反这些条款或其他适用条款的内容;</p></li>
+<li><p>上传病毒或恶意代码或做任何可能导致我们网络无法正常工作，负担过重或损害的事情;</p></li>
+<li><p>使用自动方式访问或收集我们产品的数据（未经我们事先许可）或尝试访问您无权访问的数据</p></li>
+<li><p>从事任何限制或禁止任何人使用或享用本网站的行为，或根据我们的判断会使我们或我们的任何用户、关联公司或任何其他第三方承担任何责任，损害或损害任何类型的行为。</p></li>
+<li><p>违反系统或网络安全可能导致责任。我们可以随时以任何理由暂停或终止您访问本网站，恕不另行通知</p></li>
+<li><p>使用本网络对外提供服务时，业务须自行前往网信办备案，如由于备案原因造成的法律风险本网站不承担任何责任。</p></li>
+</ul>
+<p>您在使用 XuperChain 测试环境前，请确认已经明确了解上述用户须知，当您使用测试环境时表示您已知悉并接收测试环境用户须知。如果测试环境不能满足您的需求，您也可以按照 ` XuperChain 官方文档 &lt;../quickstart.html&gt;`_ 搭建自己的测试环境。如果因为测试环境使用上带来的问题，我们不承担任何法律责任。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="guides.html" class="btn btn-neutral float-right" title="XuperChain 测试环境使用指南" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../development_manuals/XuperIDE.html" class="btn btn-neutral float-left" title="XuperIDE 使用文档" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

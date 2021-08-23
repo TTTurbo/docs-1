@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>可信账本 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="合约账号" href="../advanced_usage/contract_accounts.html" />
+    <link rel="prev" title="XuperChain 跨链技术" href="cross_chain.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/perfomance.html">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trusted_ledger_intro.html">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">可信账本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">背景</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">名词解释</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">架构设计</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">重要接口和数据结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#teesdk">TEESDK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#xuperchain">Xuperchain</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">应用场景</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">秘钥托管</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">链上隐私计算</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">可信随机数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/create_contracts.html">创建合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperCDT.html">智能合约SDK使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperRPC.html">XuperChain RPC 接口使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/description.html">XuperChain 测试环境说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">可信账本</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/design_documents/trusted_ledger_design.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>可信账本<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>背景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在大数据和人工智能时代，数据的广泛链接和应用导致隐私问题日益凸显。数据流通可以产生巨大的价值，而阻碍数据流通的主要因素就是数据隐私问题。保护数据安全既是对像百度这样的科技公司的要求，也是行业的底线。</p>
+<p>为实现数据流通过程中的隐私保护， XuperChain 可信账本采用了Intel SGX和同态加密等多种技术，实现了数据隐私计算、数据权限管理和数据存证溯源功能。</p>
+</div>
+<div class="section" id="id3">
+<h2>名词解释<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>可信账本：基于百度 XuperChain 和Mesatee技术，支持合约数据加密存储及链上密文运算等功能。</p>
+<p>TEE：可信执行环境(TEE)是CPU的安全区域，它可以保护在其内部加载的代码和数据的机密性与完整性。</p>
+<p>SGX：Software Guard Extensions(SGX)是Intel推出的基于Intel CPU的硬件安全机制。</p>
+<p>Mesatee：Memory Safe TEE(Mesatee)是百度基于Intel SGX设计的内存安全的可信安全计算服务框架。</p>
+</div>
+<div class="section" id="id4">
+<h2>架构设计<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>下图是可信账本的系统架构设计</p>
+<img alt="../_images/trusted_ledger.png" class="align-center" src="../_images/trusted_ledger.png" />
+<p>TEESDK是与TEE服务请求的入口，将编译为动态链接库被 XuperChain 调用，实现链上的隐私计算。</p>
+<p>可信账本目前支持数据加密存储、数据权限管理、秘钥托管和基本的密文计算功能，此部分代码暂未开源。</p>
+</div>
+<div class="section" id="id5">
+<h2>重要接口和数据结构<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<div class="section" id="teesdk">
+<h3>TEESDK<a class="headerlink" href="#teesdk" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// 提交任务到TEE服务，返回计算结果</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">TEEClient</span><span class="p">)</span> <span class="nx">Submit</span><span class="p">(</span><span class="nx">method</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">cipher</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kt">string</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xuperchain">
+<h3>Xuperchain<a class="headerlink" href="#xuperchain" title="永久链接至标题">¶</a></h3>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// contractSDK</span>
+<span class="c1">// TEE隐私计算接口，供合约调用</span>
+<span class="kt">bool</span> <span class="nx">binary_ops</span><span class="p">(</span><span class="kd">const</span> <span class="nx">std</span><span class="p">::</span><span class="kt">string</span> <span class="nx">op</span><span class="p">,</span> <span class="kd">const</span> <span class="nx">Operand</span> <span class="o">&amp;</span><span class="nx">left_op</span><span class="p">,</span>
+                                <span class="kd">const</span> <span class="nx">Operand</span> <span class="o">&amp;</span><span class="nx">right_op</span><span class="p">,</span> <span class="nx">std</span><span class="p">::</span><span class="kd">map</span><span class="p">&lt;</span><span class="nx">std</span><span class="p">::</span><span class="kt">string</span><span class="p">,</span> <span class="nx">std</span><span class="p">::</span><span class="kt">string</span><span class="p">&gt;</span> <span class="o">*</span><span class="nx">result</span><span class="p">)</span>
+<span class="kt">bool</span> <span class="nx">authorize</span><span class="p">(</span><span class="kd">const</span> <span class="nx">AuthInfo</span> <span class="o">&amp;</span><span class="nx">auth</span><span class="p">,</span> <span class="nx">std</span><span class="p">::</span><span class="kd">map</span><span class="p">&lt;</span><span class="nx">std</span><span class="p">::</span><span class="kt">string</span><span class="p">,</span> <span class="nx">std</span><span class="p">::</span><span class="kt">string</span><span class="p">&gt;</span> <span class="o">*</span><span class="nx">result</span><span class="p">)</span>
+
+<span class="c1">// contract/teevm</span>
+<span class="c1">// 解析合约调用为可信账本调用</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">tf</span> <span class="o">*</span><span class="nx">TrustFunctionResolver</span><span class="p">)</span> <span class="nx">ResolveFunc</span><span class="p">(</span><span class="nx">module</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="kd">interface</span><span class="p">{},</span> <span class="kt">bool</span><span class="p">)</span>
+<span class="c1">// 调用TEESDK插件执行链上隐私计算</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">tf</span> <span class="o">*</span><span class="nx">TrustFunctionResolver</span><span class="p">)</span> <span class="nx">tfcall</span><span class="p">(</span><span class="nx">ctx</span> <span class="nx">exec</span><span class="p">.</span><span class="nx">Context</span><span class="p">,</span> <span class="nx">inptr</span><span class="p">,</span> <span class="nx">inlen</span><span class="p">,</span>
+                                                                                                                                                                <span class="nx">outpptr</span><span class="p">,</span> <span class="nx">outlenptr</span> <span class="kt">uint32</span><span class="p">)</span> <span class="kt">uint32</span>
+
+<span class="c1">// 可信账本配置，要设置TEESDK插件地址及相关配置地址</span>
+<span class="kd">type</span> <span class="nx">TEEConfig</span> <span class="kd">struct</span> <span class="p">{</span>
+   <span class="nx">Enable</span>     <span class="kt">bool</span>   <span class="s">`yaml:&quot;enable&quot;`</span>     <span class="c1">// enable: on or off to enable private ledger</span>
+   <span class="nx">PluginPath</span> <span class="kt">string</span> <span class="s">`yaml:&quot;pluginPath&quot;`</span> <span class="c1">// path to dynamic library</span>
+   <span class="nx">ConfigPath</span> <span class="kt">string</span> <span class="s">`yaml:&quot;configPath&quot;`</span> <span class="c1">// config path for the dynamic</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>应用场景<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id7">
+<h3>秘钥托管<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>利用TEE托管私钥，保证私钥无法被外部访问。同时支持利用SGX的sealing技术进行私钥的持久化存储。</p>
+</div>
+<div class="section" id="id8">
+<h3>链上隐私计算<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>可信账本可以实现链上密文存储和计算。例如， 姚氏百万富翁问题, 安全ID求交等。在政务数据共享领域，经常有数据安全交换的需求，希望实现所谓的”可以分享数据，但是不能篡改数据“，本质上就是如何保证数据所有权的前提下，挖掘数据的价值，放心地让其他方使用自身数据；</p>
+</div>
+<div class="section" id="id9">
+<h3>可信随机数<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>利用TEE可以生成可信随机数，联盟链节点之间可利用可信随机数进行共识。</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../advanced_usage/contract_accounts.html" class="btn btn-neutral float-right" title="合约账号" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cross_chain.html" class="btn btn-neutral float-left" title="XuperChain 跨链技术" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
