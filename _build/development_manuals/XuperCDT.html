@@ -1,0 +1,1544 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>智能合约SDK使用说明 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="智能合约开发详解" href="XdevManual.html" />
+    <link rel="prev" title="数字资产交易" href="../developing_apps/erc721.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/perfomance.html">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trusted_ledger_intro.html">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/trusted_ledger_design.html">可信账本</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/create_contracts.html">创建合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">智能合约SDK使用说明</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#c-api">C++接口API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-object">get_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#put-object">put_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-object">delete_object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-tx">query_tx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#query-block">query_block</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#table">table</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">定义表格</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">初始化表格</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#put">put</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#find">find</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scan">scan</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#del">del</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#json">在合约中使用 JSON</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#goapi">Go接口API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getobject">GetObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#putobject">PutObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleteobject">DeleteObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#querytx">QueryTx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#queryblock">QueryBlock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#newiterator">NewIterator</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#javaapi">Java接口API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">getObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">putObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">deleteObject</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">queryTx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">queryBlock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">newIterator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfer">transfer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transferamount">transferAmount</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#call">call</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#crossquery">crossQuery</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XuperRPC.html">XuperChain RPC 接口使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/description.html">XuperChain 测试环境说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">智能合约SDK使用说明</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/development_manuals/XuperCDT.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sdk">
+<h1>智能合约SDK使用说明<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h1>
+<p>XuperChain为方便用户开发属于自己的智能合约，提供了一整套SDK套件，即XuperCDT（XuperChain Crontract Development Toolkit），包含C++语言、Go语言和Java语言</p>
+<div class="section" id="c-api">
+<h2>C++接口API<a class="headerlink" href="#c-api" title="永久链接至标题">¶</a></h2>
+<div class="section" id="get-object">
+<h3>get_object<a class="headerlink" href="#get-object" title="永久链接至标题">¶</a></h3>
+<p>bool ContextImpl::get_object(const std::string&amp; key, std::string* value)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>查询的key值</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>根据key查到的value值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>key值查询成功，返回value值</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>key值不存在</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="put-object">
+<h3>put_object<a class="headerlink" href="#put-object" title="永久链接至标题">¶</a></h3>
+<p>bool ContextImpl::put_object(const std::string&amp; key, const std::string&amp; value)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>存入的key值</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>存入key值对应的value值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>存入db成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>存入db失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="delete-object">
+<h3>delete_object<a class="headerlink" href="#delete-object" title="永久链接至标题">¶</a></h3>
+<p>bool ContextImpl::delete_object(const std::string&amp; key)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>将要删除的key值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>删除成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>删除失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="query-tx">
+<h3>query_tx<a class="headerlink" href="#query-tx" title="永久链接至标题">¶</a></h3>
+<p>bool ContextImpl::query_tx(const std::string &amp;txid, Transaction* tx)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txid</p></td>
+<td><p>待查询的txid</p></td>
+</tr>
+<tr class="row-odd"><td><p>tx</p></td>
+<td><p>得到此txid的transaction</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>查询交易成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>查询交易失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="query-block">
+<h3>query_block<a class="headerlink" href="#query-block" title="永久链接至标题">¶</a></h3>
+<p>bool ContextImpl::query_block(const std::string &amp;blockid, Block* block)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>blockid</p></td>
+<td><p>待查询的blockid</p></td>
+</tr>
+<tr class="row-odd"><td><p>block</p></td>
+<td><p>得到此blockid的block</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>查询block成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>查询block失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="table">
+<h3>table<a class="headerlink" href="#table" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id1">
+<h4>定义表格<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h4>
+<div class="highlight-protobuf notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 表格定义以proto形式建立，存放目录为contractsdk/cpp/pb</span>
+<span class="linenos"> 2</span><span class="k">syntax</span> <span class="o">=</span> <span class="s">&quot;proto3&quot;</span><span class="p">;</span>
+<span class="linenos"> 3</span><span class="k">option</span> <span class="na">optimize_for</span> <span class="o">=</span> <span class="n">LITE_RUNTIME</span><span class="p">;</span>
+<span class="linenos"> 4</span><span class="kn">package</span> <span class="nn">anchor</span><span class="p">;</span>
+<span class="linenos"> 5</span><span class="kd">message</span> <span class="nc">Entity</span> <span class="p">{</span>
+<span class="linenos"> 6</span>    <span class="kt">int64</span> <span class="na">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="kt">string</span> <span class="na">name</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="kt">bytes</span> <span class="na">desc</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="linenos"> 9</span><span class="p">}</span>
+<span class="linenos">10</span><span class="c1">// table名称为Entity，属性分别为id，name，desc</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>初始化表格<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 定义表格的主键，表格的索引</span>
+<span class="linenos"> 2</span><span class="k">struct</span> <span class="nc">entity</span><span class="o">:</span> <span class="k">public</span> <span class="n">anchor</span><span class="o">::</span><span class="n">Entity</span> <span class="p">{</span>
+<span class="linenos"> 3</span>    <span class="n">DEFINE_ROWKEY</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+<span class="linenos"> 4</span>    <span class="n">DEFINE_INDEX_BEGIN</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos"> 5</span>    <span class="n">DEFINE_INDEX_ADD</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">id</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="linenos"> 6</span>    <span class="n">DEFINE_INDEX_ADD</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">desc</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="n">DEFINE_INDEX_END</span><span class="p">();</span>
+<span class="linenos"> 8</span><span class="p">};</span>
+<span class="linenos"> 9</span><span class="c1">// 声明表格</span>
+<span class="linenos">10</span><span class="n">xchain</span><span class="o">::</span><span class="n">cdt</span><span class="o">::</span><span class="n">Table</span><span class="o">&lt;</span><span class="n">entity</span><span class="o">&gt;</span> <span class="n">_entity</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="put">
+<h4>put<a class="headerlink" href="#put" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="linenos">2</span><span class="kt">bool</span> <span class="n">Table</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">put</span><span class="p">(</span><span class="n">T</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>t</p></td>
+<td><p>待插入的数据项</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>插入成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>插入失败</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1">// 参考样例 contractsdk/cpp/example/anchor.cc</span>
+<span class="linenos"> 2</span><span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Anchor</span><span class="p">,</span> <span class="n">set</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 3</span>    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span><span class="o">*</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+<span class="linenos"> 4</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+<span class="linenos"> 5</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">desc</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;desc&quot;</span><span class="p">);</span>
+<span class="linenos"> 7</span>    <span class="n">Anchor</span><span class="o">::</span><span class="n">entity</span> <span class="n">ent</span><span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">stoll</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+<span class="linenos"> 9</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="linenos">10</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_desc</span><span class="p">(</span><span class="n">desc</span><span class="p">);</span>
+<span class="linenos">11</span>    <span class="n">self</span><span class="p">.</span><span class="n">get_entity</span><span class="p">().</span><span class="n">put</span><span class="p">(</span><span class="n">ent</span><span class="p">);</span>
+<span class="linenos">12</span>    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">);</span>
+<span class="linenos">13</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="find">
+<h4>find<a class="headerlink" href="#find" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="linenos">2</span><span class="kt">bool</span> <span class="n">Table</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">find</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">PairType</span><span class="o">&gt;</span> <span class="n">input</span><span class="p">,</span> <span class="n">T</span><span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>input</p></td>
+<td><p>查询关键字</p></td>
+</tr>
+<tr class="row-odd"><td><p>t</p></td>
+<td><p>返回的数据项</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>查询成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>查询失败</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Anchor</span><span class="p">,</span> <span class="n">get</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span><span class="o">*</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+<span class="linenos"> 3</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;key&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span>    <span class="n">Anchor</span><span class="o">::</span><span class="n">entity</span> <span class="n">ent</span><span class="p">;</span>
+<span class="linenos"> 5</span>    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">get_entity</span><span class="p">().</span><span class="n">find</span><span class="p">({{</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">}},</span> <span class="o">&amp;</span><span class="n">ent</span><span class="p">))</span> <span class="p">{</span>
+<span class="linenos"> 6</span>        <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="n">ent</span><span class="p">.</span><span class="n">to_str</span><span class="p">());</span>
+<span class="linenos"> 7</span>        <span class="k">return</span><span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="p">}</span>
+<span class="linenos"> 9</span>    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;can not find &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">);</span>
+<span class="linenos">10</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scan">
+<h4>scan<a class="headerlink" href="#scan" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="linenos">2</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TableIterator</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&gt;</span> <span class="n">Table</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">scan</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">initializer_list</span><span class="o">&lt;</span><span class="n">PairType</span><span class="o">&gt;</span> <span class="n">input</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>input</p></td>
+<td><p>查询关键字</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>TableIterator</p></td>
+<td><p>符合条件的迭代器</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Anchor</span><span class="p">,</span> <span class="n">scan</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span><span class="o">*</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+<span class="linenos"> 3</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+<span class="linenos"> 5</span>    <span class="c1">// const std::string&amp; desc = ctx-&gt;arg(&quot;desc&quot;);</span>
+<span class="linenos"> 6</span>    <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">get_entity</span><span class="p">().</span><span class="n">scan</span><span class="p">({{</span><span class="s">&quot;id&quot;</span><span class="p">,</span> <span class="n">id</span><span class="p">},{</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">}});</span>
+<span class="linenos"> 7</span>    <span class="n">Anchor</span><span class="o">::</span><span class="n">entity</span> <span class="n">ent</span><span class="p">;</span>
+<span class="linenos"> 8</span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos"> 9</span>    <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">kv</span><span class="p">;</span>
+<span class="linenos">10</span>    <span class="k">while</span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">())</span> <span class="p">{</span>
+<span class="linenos">11</span>        <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">get</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ent</span><span class="p">))</span> <span class="p">{</span>
+<span class="linenos">12</span>            <span class="cm">/*</span>
+<span class="linenos">13</span><span class="cm">            std::cout &lt;&lt; &quot;id: &quot; &lt;&lt; ent.id()&lt;&lt; std::endl;</span>
+<span class="linenos">14</span><span class="cm">            std::cout &lt;&lt; &quot;name: &quot; &lt;&lt; ent.name()&lt;&lt; std::endl;</span>
+<span class="linenos">15</span><span class="cm">            std::cout &lt;&lt; &quot;desc: &quot; &lt;&lt; ent.desc()&lt;&lt; std::endl;</span>
+<span class="linenos">16</span><span class="cm">            */</span>
+<span class="linenos">17</span>            <span class="k">if</span> <span class="p">(</span><span class="n">kv</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">ent</span><span class="p">.</span><span class="n">name</span><span class="p">())</span> <span class="o">!=</span> <span class="n">kv</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+<span class="linenos">18</span>                <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">(</span><span class="s">&quot;find duplicated key&quot;</span><span class="p">);</span>
+<span class="linenos">19</span>                <span class="k">return</span><span class="p">;</span>
+<span class="linenos">20</span>            <span class="p">}</span>
+<span class="linenos">21</span>            <span class="n">kv</span><span class="p">[</span><span class="n">ent</span><span class="p">.</span><span class="n">name</span><span class="p">()]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="linenos">22</span>            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="linenos">23</span>        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos">24</span>            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;get error&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">25</span>        <span class="p">}</span>
+<span class="linenos">26</span>    <span class="p">}</span>
+<span class="linenos">27</span>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">28</span>    <span class="k">if</span> <span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">())</span> <span class="p">{</span>
+<span class="linenos">29</span>        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">error</span><span class="p">(</span><span class="nb">true</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="linenos">30</span>    <span class="p">}</span>
+<span class="linenos">31</span>    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+<span class="linenos">32</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="del">
+<h4>del<a class="headerlink" href="#del" title="永久链接至标题">¶</a></h4>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
+<span class="linenos">2</span><span class="kt">bool</span> <span class="n">Table</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;::</span><span class="n">del</span><span class="p">(</span><span class="n">T</span> <span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>t</p></td>
+<td><p>一个数据项</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>true</p></td>
+<td><p>删除成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>false</p></td>
+<td><p>删除失败</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Anchor</span><span class="p">,</span> <span class="n">del</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span><span class="o">*</span> <span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+<span class="linenos"> 3</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">id</span><span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">name</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">);</span>
+<span class="linenos"> 5</span>    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">desc</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;desc&quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span>    <span class="n">Anchor</span><span class="o">::</span><span class="n">entity</span> <span class="n">ent</span><span class="p">;</span>
+<span class="linenos"> 7</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_id</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">stoll</span><span class="p">(</span><span class="n">id</span><span class="p">));</span>
+<span class="linenos"> 8</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_name</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+<span class="linenos"> 9</span>    <span class="n">ent</span><span class="p">.</span><span class="n">set_desc</span><span class="p">(</span><span class="n">desc</span><span class="p">);</span>
+<span class="linenos">10</span>    <span class="n">self</span><span class="p">.</span><span class="n">get_entity</span><span class="p">().</span><span class="n">del</span><span class="p">(</span><span class="n">ent</span><span class="p">);</span>
+<span class="linenos">11</span>    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">);</span>
+<span class="linenos">12</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="json">
+<h3>在合约中使用 JSON<a class="headerlink" href="#json" title="永久链接至标题">¶</a></h3>
+<blockquote>
+<div><p>XuperChain SDK 包含了 json 相关的库，可以在合约中方便地使用 json 进行序列化和反序列化。 在合约中使用 json 的例子如下</p>
+</div></blockquote>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;xchain/json/json.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;xchain/xchain.h&quot;</span><span class="cp"></span>
+
+<span class="k">struct</span> <span class="nc">Features</span> <span class="o">:</span> <span class="n">xchain</span><span class="o">::</span><span class="n">Contract</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Features</span><span class="p">,</span> <span class="n">json_load_dump</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span> <span class="o">*</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">v</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">arg</span><span class="p">(</span><span class="s">&quot;value&quot;</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">j</span> <span class="o">=</span> <span class="n">xchain</span><span class="o">::</span><span class="n">json</span><span class="o">::</span><span class="n">parse</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">dump</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="n">DEFINE_METHOD</span><span class="p">(</span><span class="n">Features</span><span class="p">,</span> <span class="n">json_literal</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">xchain</span><span class="o">::</span><span class="n">Context</span> <span class="o">*</span><span class="n">ctx</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">context</span><span class="p">();</span>
+    <span class="n">xchain</span><span class="o">::</span><span class="n">json</span> <span class="n">j</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">{</span><span class="s">&quot;int&quot;</span><span class="p">,</span>    <span class="mi">3</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">&quot;float&quot;</span><span class="p">,</span>  <span class="mf">3.14</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">&quot;string&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">&quot;array&quot;</span><span class="p">,</span>  <span class="p">{</span><span class="s">&quot;hello&quot;</span><span class="p">,</span> <span class="s">&quot;world&quot;</span><span class="p">}},</span>
+            <span class="p">{</span><span class="s">&quot;object&quot;</span><span class="p">,</span> <span class="p">{{</span><span class="s">&quot;key&quot;</span><span class="p">,</span> <span class="s">&quot;value&quot;</span><span class="p">}}},</span>
+            <span class="p">{</span><span class="s">&quot;true&quot;</span><span class="p">,</span>   <span class="nb">true</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">&quot;false&quot;</span><span class="p">,</span>  <span class="nb">false</span><span class="p">},</span>
+            <span class="p">{</span><span class="s">&quot;null&quot;</span><span class="p">,</span>   <span class="k">nullptr</span><span class="p">},</span>
+    <span class="p">};</span>
+    <span class="n">ctx</span><span class="o">-&gt;</span><span class="n">ok</span><span class="p">(</span><span class="n">j</span><span class="p">.</span><span class="n">dump</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>关于 json 库更多的内容可以查看  <a class="reference external" href="https://github.com/nlohmann/json">文档</a></p>
+</div>
+</div>
+<div class="section" id="goapi">
+<h2>Go接口API<a class="headerlink" href="#goapi" title="永久链接至标题">¶</a></h2>
+<div class="section" id="getobject">
+<h3>GetObject<a class="headerlink" href="#getobject" title="永久链接至标题">¶</a></h3>
+<p>func GetObject(key []byte) ([]byte, error)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>查询的key值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>value, nil</p></td>
+<td><p>key值查询成功，返回value值</p></td>
+</tr>
+<tr class="row-odd"><td><p>_, 非nil</p></td>
+<td><p>key值不存在</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="putobject">
+<h3>PutObject<a class="headerlink" href="#putobject" title="永久链接至标题">¶</a></h3>
+<p>func PutObject(key []byte, value []byte) error</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>存入的key值</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>存入key值对应的value值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>存入db成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>非nil</p></td>
+<td><p>存入db失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deleteobject">
+<h3>DeleteObject<a class="headerlink" href="#deleteobject" title="永久链接至标题">¶</a></h3>
+<p>func DeleteObject(key []byte) error</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>将要删除的key值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nil</p></td>
+<td><p>删除成功</p></td>
+</tr>
+<tr class="row-odd"><td><p>非nil</p></td>
+<td><p>删除失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="querytx">
+<h3>QueryTx<a class="headerlink" href="#querytx" title="永久链接至标题">¶</a></h3>
+<p>func QueryTx(txid string) (*pb.Transaction, error)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txid</p></td>
+<td><p>待查询的txid</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tx, nil</p></td>
+<td><p>查询交易成功, 得到此txid的transaction</p></td>
+</tr>
+<tr class="row-odd"><td><p>_, 非nil</p></td>
+<td><p>查询交易失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queryblock">
+<h3>QueryBlock<a class="headerlink" href="#queryblock" title="永久链接至标题">¶</a></h3>
+<p>func QueryBlock(blockid string) (*pb.Block, error)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>blockid</p></td>
+<td><p>待查询的blockid</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>block, nil</p></td>
+<td><p>查询block成功, 得到此blockid的block</p></td>
+</tr>
+<tr class="row-odd"><td><p>_, 非nil</p></td>
+<td><p>查询block失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="newiterator">
+<h3>NewIterator<a class="headerlink" href="#newiterator" title="永久链接至标题">¶</a></h3>
+<p>func NewIterator(start, limit []byte) Iterator</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>初始关键字</p></td>
+</tr>
+<tr class="row-odd"><td><p>limit</p></td>
+<td><p>结束关键字</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Iterator</p></td>
+<td><p>Interator的接口</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nx">Key</span><span class="p">()</span> <span class="p">[]</span><span class="kt">byte</span>
+<span class="linenos">2</span><span class="nx">Value</span><span class="p">()</span> <span class="p">[]</span><span class="kt">byte</span>
+<span class="linenos">3</span><span class="nx">Next</span><span class="p">()</span> <span class="kt">bool</span>
+<span class="linenos">4</span><span class="nx">Error</span><span class="p">()</span> <span class="kt">error</span>
+<span class="linenos">5</span><span class="c1">// Iterator 必须在使用完毕后关闭</span>
+<span class="linenos">6</span><span class="nx">Close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="javaapi">
+<h2>Java接口API<a class="headerlink" href="#javaapi" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>getObject<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>键值获取</p>
+<p>public byte[] getObject(byte[] key)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>查询的key值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>value</p></td>
+<td><p>key值查询成功，返回value值；为null时，查询失败</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>putObject<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+<p>键值存储</p>
+<p>public void putObject(byte[] key, byte[] value)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>存入的key值</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>存入key值对应的value值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>void</p></td>
+<td><p>操作失败时，可捕捉异常；否则，成功</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3>deleteObject<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>键值删除</p>
+<p>public void deleteObject(byte[] key)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>key</p></td>
+<td><p>将要删除的key值</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>void</p></td>
+<td><p>操作失败时，可捕捉异常；否则，成功</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h3>queryTx<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>交易查询</p>
+<p>public Contract.Transaction queryTx(String txid)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>txid</p></td>
+<td><p>待查询的txid</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>tx</p></td>
+<td><p>查询交易成功, 得到此txid的transaction；查询失败，抛出异常</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h3>queryBlock<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>区块查询</p>
+<p>public Contract.Block queryBlock(String blockid)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>blockid</p></td>
+<td><p>待查询的blockid</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+</div>
+<div class="section" id="id9">
+<h3>newIterator<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h3>
+<p>迭代器</p>
+<p>public Iterator&lt;ContractIteratorItem&gt; newIterator(byte[] start, byte[] limit)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>初始关键字</p></td>
+</tr>
+<tr class="row-odd"><td><p>limit</p></td>
+<td><p>结束关键字</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Iterator</p></td>
+<td><p>Interator的接口</p></td>
+</tr>
+</tbody>
+</table>
+<p>样例</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nd">@ContractMethod</span>
+<span class="linenos"> 2</span><span class="kd">public</span> <span class="n">Response</span> <span class="nf">getList</span><span class="p">(</span><span class="n">Context</span> <span class="n">ctx</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 3</span>    <span class="kt">byte</span><span class="o">[]</span> <span class="n">start</span> <span class="o">=</span> <span class="n">ctx</span><span class="p">.</span><span class="na">args</span><span class="p">().</span><span class="na">get</span><span class="p">(</span><span class="s">&quot;start&quot;</span><span class="p">);</span>
+<span class="linenos"> 4</span>    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos"> 5</span>        <span class="k">return</span> <span class="n">Response</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">&quot;missing start&quot;</span><span class="p">);</span>
+<span class="linenos"> 6</span>    <span class="p">}</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>    <span class="kt">byte</span><span class="o">[]</span> <span class="n">limit</span> <span class="o">=</span> <span class="n">PrefixRange</span><span class="p">.</span><span class="na">generateLimit</span><span class="p">(</span><span class="n">start</span><span class="p">);</span>
+<span class="linenos"> 9</span>    <span class="n">Iterator</span><span class="o">&lt;</span><span class="n">ContractIteratorItem</span><span class="o">&gt;</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">ctx</span><span class="p">.</span><span class="na">newIterator</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">limit</span><span class="p">);</span>
+<span class="linenos">10</span>    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos">11</span>    <span class="k">while</span> <span class="p">(</span><span class="n">iter</span><span class="p">.</span><span class="na">hasNext</span><span class="p">())</span> <span class="p">{</span>
+<span class="linenos">12</span>        <span class="n">ContractIteratorItem</span> <span class="n">item</span> <span class="o">=</span> <span class="n">iter</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+<span class="linenos">13</span>        <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">bytesToString</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">getKey</span><span class="p">());</span>
+<span class="linenos">14</span>        <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">bytesToString</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="na">getValue</span><span class="p">());</span>
+<span class="linenos">15</span>        <span class="n">ctx</span><span class="p">.</span><span class="na">log</span><span class="p">(</span><span class="s">&quot;item: &quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;, key: &quot;</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">&quot;, value: &quot;</span> <span class="o">+</span> <span class="n">value</span><span class="p">);</span>
+<span class="linenos">16</span>        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="linenos">17</span>    <span class="p">}</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>    <span class="k">return</span> <span class="n">Response</span><span class="p">.</span><span class="na">ok</span><span class="p">(</span><span class="s">&quot;ok&quot;</span><span class="p">.</span><span class="na">getBytes</span><span class="p">());</span>
+<span class="linenos">20</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transfer">
+<h3>transfer<a class="headerlink" href="#transfer" title="永久链接至标题">¶</a></h3>
+<p>从合约向其他地址转账</p>
+<p>public void transfer(String to, BigInteger amount)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>to</p></td>
+<td><p>收款地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>amount</p></td>
+<td><p>数量</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+</div>
+<div class="section" id="transferamount">
+<h3>transferAmount<a class="headerlink" href="#transferamount" title="永久链接至标题">¶</a></h3>
+<p>调用合约方法向合约转账时，获取转账的数量</p>
+<p>public BigInteger transferAmount()</p>
+<p>输入</p>
+<p>无</p>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>BigInteger</p></td>
+<td><p>数量</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="call">
+<h3>call<a class="headerlink" href="#call" title="永久链接至标题">¶</a></h3>
+<p>跨合约调用</p>
+<p>public Response call(String module, String contract, String method, Map&lt;String, byte[]&gt; args)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>module</p></td>
+<td><p>模块名</p></td>
+</tr>
+<tr class="row-odd"><td><p>contract</p></td>
+<td><p>合约名</p></td>
+</tr>
+<tr class="row-even"><td><p>method</p></td>
+<td><p>合约方法</p></td>
+</tr>
+<tr class="row-odd"><td><p>args</p></td>
+<td><p>合约参数</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>合约返回值</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="crossquery">
+<h3>crossQuery<a class="headerlink" href="#crossquery" title="永久链接至标题">¶</a></h3>
+<p>跨链查询</p>
+<p>public Response crossQuery(String uri, Map&lt;String, byte[]&gt; args)</p>
+<p>输入</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>uri</p></td>
+<td><p>跨链路由地址</p></td>
+</tr>
+<tr class="row-odd"><td><p>args</p></td>
+<td><p>合约参数</p></td>
+</tr>
+</tbody>
+</table>
+<p>输出</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 62%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>参数</p></th>
+<th class="head"><p>说明</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response</p></td>
+<td><p>合约返回值</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="XdevManual.html" class="btn btn-neutral float-right" title="智能合约开发详解" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../developing_apps/erc721.html" class="btn btn-neutral float-left" title="数字资产交易" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

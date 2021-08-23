@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>创建合约 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="发起提案" href="initiate_proposals.html" />
+    <link rel="prev" title="多节点部署" href="multi-nodes.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/perfomance.html">性能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/trusted_ledger_intro.html">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction/summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/trusted_ledger_design.html">可信账本</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">创建合约</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">编写合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wasm">部署 wasm合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#native">部署native合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solidity">部署solidity合约</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">合约升级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#acl">设置合约方法的ACL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperCDT.html">智能合约SDK使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperRPC.html">XuperChain RPC 接口使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/description.html">XuperChain 测试环境说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">创建合约</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/advanced_usage/create_contracts.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>创建合约<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>XuperChain 支持丰富的智能合约开发语言，比如go，Solitidy，C++，Java等。</p>
+</div></blockquote>
+<p>阅读本节前，请先确保完成 <a class="reference external" href="https://xuperchain.readthedocs.io/zh/latest/quickstart.html">XuperChain环境部署</a></p>
+<div class="section" id="id2">
+<h2>编写合约<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<blockquote>
+<div><p>可以根据合约示例代码，编写自己的合约</p>
+<blockquote>
+<div><p><a class="reference external" href="https://github.com/xuperchain/xuperchain/blob/master/core/contractsdk/cpp/example/counter.cc">c++ counter 合约</a>,
+<a class="reference external" href="https://github.com/xuperchain/xuperchain/tree/master/core/contractsdk/go/example/counter">go counter 合约</a>,
+<a class="reference external" href="https://github.com/xuperchain/xuperchain/tree/master/core/contractsdk/java/example/counter">java counter 合约</a></p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="wasm">
+<h2>部署 wasm合约<a class="headerlink" href="#wasm" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p>编译合约</p>
+<blockquote>
+<div><p>对于C++合约，已提供编译脚本，位于 contractsdk/cpp/build.sh。</p>
+<p>需要注意的是，脚本依赖从hub.baidubce.com拉取的docker镜像，请在编译前确认docker相关环境是可用的</p>
+</div></blockquote>
+</li>
+<li><p>部署合约</p>
+<blockquote>
+<div><p>部署合约的操作需要由合约账号完成，部署操作同样需要支付手续费，操作前需要确保合约账号下有足够的余额</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./xchain-cli wasm deploy --account XC1111111111111111@xuper  -a <span class="s1">&#39;{&quot;creator&quot;:&quot;XC1111111111111111@xuper&quot;}&#39;</span> --cname counter ../core/contractsdk/cpp/build/counter.wasm
+</pre></div>
+</div>
+<p>运行时会提示手续费的数目，使用 –fee 参数传入即可</p>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><ol class="arabic" start="3">
+<li><p>合约调用</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./xchain-cli wasm invoke --method increase -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> counter --fee <span class="m">100</span>
+The gas you cousume is: <span class="m">93</span>
+The fee you pay is: <span class="m">100</span>
+Tx id: 141e4c1fb99566ce4b6ba32fa92af73c0e9857189debf773cf5753d64e1416a7
+
+$ ./xchain-cli wasm query --method get -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> counter
+contract response: <span class="m">1</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="native">
+<h2>部署native合约<a class="headerlink" href="#native" title="永久链接至标题">¶</a></h2>
+<p>如果本地搭建 XuperChain 环境，在部署、调用 native 合约之前，请先查看`conf/xchain.yaml` 中native一节，确保native合约功能开启。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># 管理native合约的配置</span>
+<span class="linenos"> 2</span><span class="nt">native</span><span class="p">:</span>
+<span class="linenos"> 3</span>    <span class="nt">enable</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>    <span class="c1"># docker相关配置</span>
+<span class="linenos"> 6</span>    <span class="nt">docker</span><span class="p">:</span>
+<span class="linenos"> 7</span>        <span class="l l-Scalar l-Scalar-Plain">enable:false</span>
+<span class="linenos"> 8</span>        <span class="l l-Scalar l-Scalar-Plain"># 合约运行的镜像名字</span>
+<span class="linenos"> 9</span>        <span class="l l-Scalar l-Scalar-Plain">imageName</span><span class="p p-Indicator">:</span> <span class="s">&quot;docker.io/centos:7.5.1804&quot;</span>
+<span class="linenos">10</span>        <span class="c1"># cpu核数限制，可以为小数</span>
+<span class="linenos">11</span>        <span class="nt">cpus</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">12</span>        <span class="c1"># 内存大小限制</span>
+<span class="linenos">13</span>        <span class="nt">memory</span><span class="p">:</span> <span class="s">&quot;1G&quot;</span>
+<span class="linenos">14</span>    <span class="c1"># 停止合约的等待秒数，超时强制杀死</span>
+<span class="linenos">15</span>    <span class="nt">stopTimeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>编译合约 - Golang</p>
+<blockquote>
+<div><p>编译native合约时，只要保持环境和编译XuperChain源码时一致即可，我们以 contractsdk/go/example 中的 counter 合约为例</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> contractsdk/go/example/counter
+go build
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>编译合约 - Java</p>
+<blockquote>
+<div><p>我们以contractsdk/java/example中的counter合约为例</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> contractsdk/java/example/counter
+$ mvn package
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>部署合约</p>
+<blockquote>
+<div><p>部署native合约。针对不同语言实现的合约，主要通过 <code class="docutils literal notranslate"><span class="pre">--runtime</span></code> 字段进行区分</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 部署golang native合约</span>
+$ ./xchain-cli native deploy --account XC1111111111111111@xuper --fee <span class="m">15587517</span> --runtime go -a <span class="s1">&#39;{&quot;creator&quot;:&quot;XC1111111111111111@xuper&quot;}&#39;</span>   --cname golangcounter ../core/contractsdk/go/example/counter/counter
+ contract response: ok
+ The gas you cousume is: <span class="m">14311874</span>
+ The fee you pay is: <span class="m">15587517</span>
+ Tx id: af0d46f6df2edba4d9d9d07e1db457e5267274b1c9fe0611bb994c0aa7931933
+
+<span class="c1"># 部署java native合约</span>
+$ ./xchain-cli native deploy --account XC1111111111111111@xuper --fee <span class="m">15587517</span> --runtime java   --cname javacounter ../core/contractsdk/java/example/counter/target/counter-0.1.0-jar-with-dependencies.jar
+ The gas you cousume is: <span class="m">14311876</span>
+ The fee you pay is: <span class="m">15587517</span>
+ Tx id: 875d2c9129973a1c64811d7a5a55ca80743102abc30d19f012656fa52ee0f4f7
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>合约调用</p>
+<blockquote>
+<div><p>针对不同语言实现的 native合约，调用方式相同。通过合约名直接发起合约调用和查询</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 调用golang native合约，Increase方法，golangcounter为合约名</span>
+$ ./xchain-cli native invoke --method Increase -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> golangcounter
+
+<span class="c1"># 调用golang native合约，Get方法，golangcounter为合约名</span>
+$ ./xchain-cli native query --method Get -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> golangcounter
+contract response: <span class="m">1</span>
+
+<span class="c1"># 调用java native合约，increase方法，javacounter为合约名</span>
+$ ./xchain-cli native invoke --method increase -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> javacounter --fee <span class="m">10</span>
+
+<span class="c1"># 调用java native合约，get方法，javacounter为合约名</span>
+$ ./xchain-cli native query --method get -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> javacounter
+  contract response: <span class="m">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="solidity">
+<h2>部署solidity合约<a class="headerlink" href="#solidity" title="永久链接至标题">¶</a></h2>
+<p>如果本地搭建 XuperChain 环境，在部署、调用solidity合约之前，请先查看`conf/xchain.yaml` 中evm一节，确保evm合约功能开启。</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># evm合约配置</span>
+<span class="linenos">2</span><span class="nt">evm</span><span class="p">:</span>
+<span class="linenos">3</span>    <span class="nt">driver</span><span class="p">:</span> <span class="s">&quot;evm&quot;</span>
+<span class="linenos">4</span>    <span class="nt">enable</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<ol class="arabic">
+<li><p>编译合约 - Solidity</p>
+<blockquote>
+<div><p>使用 solc 编译solidity合约。安装 solc 编译器，请参见**https://solidity-cn.readthedocs.io/zh/latest/installing-solidity.html**。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>solc --version
+// solc, the solidity compiler commandline interface
+// Version: <span class="m">0</span>.5.9+commit.c68bc34e.Darwin.appleclang
+</pre></div>
+</div>
+<p>我们以contractsdk/evm/example中的counter合约为例</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> core/contractsdk/evm/example/counter
+// 通过solc编译合约源码
+solc --bin --abi Counter.sol -o .
+// 合约二进制文件和abi文件分别存放在当前目录下，Counter.bin和Counter.abi。
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>部署合约</p>
+<blockquote>
+<div><p>部署solidity合约。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xchain-cli evm deploy --account XC1111111111111111@xuper --cname counterevm  --fee <span class="m">5200000</span> ../core/contractsdk/evm/example/counter/Counter.bin --abi ../core/contractsdk/evm/example/counter/Counter.abi
+ contract response: ok
+ The gas you cousume is: <span class="m">1789</span>
+ The fee you pay is: <span class="m">22787517</span>
+ Tx id: 78469246d86a92ad47e5c15991a55978075902809346e48533e09a8eb0e3a7e4
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--abi</span> <span class="pre">Counter.abi</span></code> ：表示部署需要使用的abi文件，用于合约方法参数编解码</p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">``</span></a>-a <a href="#id5"><span class="problematic" id="id6">``</span></a>：如果合约需要构造函数，通过-a进行指定。与c++、golang等合约的部署和调用方式相同。</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<ol class="arabic" start="4">
+<li><p>合约调用</p>
+<blockquote>
+<div><p>调用solidity合约。通过合约名直接发起合约调用和查询。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 调用solidity合约，increase方法，counterevm为合约名</span>
+$ ./xchain-cli evm invoke --method increase -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> counterevm --fee <span class="m">22787517</span>
+
+<span class="c1"># 调用solidity合约，get方法，counterevm为合约名</span>
+$ ./xchain-cli evm query --method get -a <span class="s1">&#39;{&quot;key&quot;:&quot;test&quot;}&#39;</span> counterevm
+<span class="c1"># 调用结果，其中0表示返回值的次序，1为返回值</span>
+<span class="c1"># key,value: 0 1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>XuperChain 账户与EVM账户地址转换</p>
+<blockquote>
+<div><p>XuperChain 有普通地址、合约账户以及合约名，这三类账户在EVM运行时需要转换为以太坊的地址类型（16进制编码字符串，形如0x1234567890abcdef1234567890abcdef12345678格式）。 XuperChain 提供了上述三个地址与EVM地址类型转换工具。</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># xchain合约账户地址转evm地址，contract-account表示 XuperChain 合约账户</span>
+./xchain-cli evm addr-trans -t x2e -f XC1111111111111113@xuper
+result, <span class="m">3131313231313131313131313131313131313133</span>    contract-account
+
+<span class="c1"># evm地址转xchain合约账户，contract-account表示 XuperChain 合约账户</span>
+./xchain-cli evm addr-trans -t e2x -f <span class="m">3131313231313131313131313131313131313133</span>
+result, XC1111111111111113@xuper     contract-account
+
+<span class="c1"># xchain普通账户地址转evm地址，xchain表示 XuperChain 普通账户</span>
+./xchain-cli evm addr-trans -t e2x -f 93F86A462A3174C7AD1281BCF400A9F18D244E06
+result, dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN   xchain
+
+<span class="c1"># xchain普通账户地址转evm地址，xchain表示 XuperChain 普通账户</span>
+./xchain-cli evm addr-trans -t x2e -f dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN
+result, 93F86A462A3174C7AD1281BCF400A9F18D244E06   xchain
+
+<span class="c1"># xchain合约名地址转evm地址，contract-name表示 XuperChain 合约名</span>
+./xchain-cli evm addr-trans -t x2e -f storagedata11
+result, 313131312D2D2D73746F72616765646174613131   contract-name
+
+<span class="c1"># evm地址转xchain合约名，contract-name表示 XuperChain 合约名</span>
+./xchain-cli evm addr-trans -t e2x -f 313131312D2D2D73746F72616765646174613131
+result, storagedata11   contract-name
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x2e</span></code> ：表示 XuperChain 地址转换为EVM地址</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e2x</span></code> ：表示EVM地址转换为 XuperChain 地址。</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="id7">
+<h2>合约升级<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<p>XuperChain 支持合约升级，在使用合约升级功能之前需要修改 conf/xchain.yaml，开启合约升级功能</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># 合约通用配置</span>
+<span class="nt">contract</span><span class="p">:</span>
+    <span class="nt">enableUpgrade</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>合约升级与合约部署的命令十分类似，区别在于</dt><dd><ol class="arabic simple">
+<li><p>不需要指定 runtime</p></li>
+<li><p>不需要指定初始化参数</p></li>
+</ol>
+</dd>
+</dl>
+<p>以升级 wasm 的 counter 合约为例</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xchain-cli wasm upgrade --account XC1111111111111111@xuper --cname counter ../core/contractsdk/cpp/build/counter.wasm
+</pre></div>
+</div>
+</div>
+<div class="section" id="acl">
+<h2>设置合约方法的ACL<a class="headerlink" href="#acl" title="永久链接至标题">¶</a></h2>
+<ol class="arabic">
+<li><p>准备desc文件setMethodACL.desc</p>
+<blockquote>
+<div><div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;module_name&quot;</span><span class="p">:</span> <span class="s2">&quot;xkernel&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;method_name&quot;</span><span class="p">:</span> <span class="s2">&quot;SetMethodAcl&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;args&quot;</span> <span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;contract_name&quot;</span><span class="p">:</span> <span class="s2">&quot;counter&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;method_name&quot;</span><span class="p">:</span> <span class="s2">&quot;increase&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;acl&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;pm\&quot;: {\&quot;rule\&quot;: 1,\&quot;acceptValue\&quot;: 1.0},\&quot;aksWeight\&quot;: {\&quot;UU4kyZcQinAMsBSPRLUA34ebXrfZtB4Z8\&quot;: 1}}&quot;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>参数说明：</p>
+<ul class="simple">
+<li><p><strong>module_name</strong>： 模块名称，用固定值xkernel</p></li>
+<li><p><strong>method_name</strong> ：方法名称，用固定值SetMethodAcl</p></li>
+<li><p><strong>contract_name</strong>：合约名称</p></li>
+<li><p><strong>method_name</strong>：合约方法名称</p></li>
+<li><p><strong>acl</strong>：合约方法的acl</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>设置合约方法ACL</p>
+<blockquote>
+<div><p>设置合约方法ACL的操作，需符合合约账号的ACL，在3.2节，使用 <strong>XC1111111111111111&#64;xuper</strong> 部署的counter合约，合约账号ACL里 只有1个AK，所以在data/acl/addrs中添加1行，如果合约账号ACL里有多个AK，则填写多行。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s2">&quot;XC1111111111111111@xuper/dpzuVdosQrF2kmzumhVeFQZa1aYcdgFpN&quot;</span> &gt; data/acl/addrs
+</pre></div>
+</div>
+<p>执行如下命令，设置ACL：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xchain-cli multisig gen --desc ./setMethodACL.desc --fee <span class="m">1</span> -H <span class="m">127</span>.0.0.1:37101
+./xchain-cli multisig sign --output sign.out
+./xchain-cli multisig send sign.out sign.out -H <span class="m">127</span>.0.0.1:37101
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>查看合约方法ACL</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>work@<span class="o">]</span>$ deploy-env -&gt; ./xchain-cli acl query --contract counter --method increase -H :37101
+<span class="c1"># 执行结果</span>
+<span class="c1"># {</span>
+<span class="c1">#   &quot;pm&quot;: {</span>
+<span class="c1">#     &quot;rule&quot;: 1,</span>
+<span class="c1">#     &quot;acceptValue&quot;: 1</span>
+<span class="c1">#   },</span>
+<span class="c1">#   &quot;aksWeight&quot;: {</span>
+<span class="c1">#     &quot;UU4kyZcQinAMsBSPRLUA34ebXrfZtB4Z8&quot;: 1</span>
+<span class="c1">#   }</span>
+<span class="c1"># }</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="initiate_proposals.html" class="btn btn-neutral float-right" title="发起提案" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="multi-nodes.html" class="btn btn-neutral float-left" title="多节点部署" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

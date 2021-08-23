@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+  <title>可信账本 &mdash; xuperchain-doc  文档</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+        <script src="../_static/stat.js"></script>
+        <script src="../_static/caption.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="总结" href="summary.html" />
+    <link rel="prev" title="性能" href="perfomance.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          <!-- 
+            <a href="../index.html" class="icon icon-home"> xuperchain-doc
+           -->
+
+          <!--  -->
+          </a>
+
+          
+            
+            
+                <div class="version">
+                    xuperchain-doc 3.10       
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="在文档中搜索" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+  
+        
+        
+          
+        
+        
+          <p class="caption" role="heading"><span class="caption-text">XUPERCHAIN介绍:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="brief.html">简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">模块</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datastruct.html">核心数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smart_contracts.html">智能合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="permission_system.html">权限系统</a></li>
+<li class="toctree-l1"><a class="reference internal" href="privacy.html">隐私和保密</a></li>
+<li class="toctree-l1"><a class="reference internal" href="perfomance.html">性能</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">可信账本</a></li>
+<li class="toctree-l1"><a class="reference internal" href="summary.html">总结</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">快速入门</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. XuperChain环境部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html#basic-operation">2. XuperChain基本操作</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">技术设计文档:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperModel.html">XuperModel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/XuperBridge.html">XuperBridge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xvm.html">XVM虚拟机</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/permission_model.html">账号权限控制模型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/p2p.html">XuperChain p2p网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/authentication.html">身份认证</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/proposal.html">提案和投票机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/crypto.html">密码学和隐私保护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/extension.html">插件机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/consensus.html">XuperChain 共识框架</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/chained_bft.html">Chained-BFT共识公共组件</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpos.html">XPoS共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/xpoa.html">XPoA共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/single_pow.html">Single及PoW共识</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/regulatory.html">XuperChain 监管机制</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/multidisk.html">多盘散列</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/group.html">平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/cross_chain.html">XuperChain 跨链技术</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design_documents/trusted_ledger_design.html">可信账本</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">进阶使用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/contract_accounts.html">合约账号</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-nodes.html">多节点部署</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/create_contracts.html">创建合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/initiate_proposals.html">发起提案</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/multi-disks.html">配置变更</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/parallel_chain.html">使用平行链与群组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/subscribe.html">使用事件订阅功能</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/readonly_queries.html">只读跨链场景使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/cross_chain.html">非事务场景跨链使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/construct-XPoA.html">搭建XPoA共识的 XuperChain 网络</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/trusted_ledger_advanced_usage.html">可信账本使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/monitoring.html">监控使用文档</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_usage/release.html">下载发行版</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发应用</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/eleccert.html">电子存证合约</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developing_apps/erc721.html">数字资产交易</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">开发手册</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperCDT.html">智能合约SDK使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XdevManual.html">智能合约开发详解</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperRPC.html">XuperChain RPC 接口使用说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development_manuals/XuperIDE.html">XuperIDE 使用文档</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">XUPERCHAIN 测试环境</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/description.html">XuperChain 测试环境说明</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test_network/guides.html">XuperChain 测试环境使用指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">贡献指南</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/pull_requests.html">代码提交指南</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../operations_guides.html">操作指导</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video.html">视频教程</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands_reference.html">指令介绍(API)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQs.html">常见问题解答</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary.html">词汇表</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lessons.html">XuperChain 小课堂</a></li>
+</ul>
+
+          
+        
+        
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">xuperchain-doc</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+<li><a href="../index.html" class="breadtitle">首页</a>
+</li>
+<li>
+   <img class="arrow_r" src="/_static/images/arrow_right.svg"/>
+</li>
+
+<li class="lititle">可信账本</li>
+
+    
+<li class="wy-breadcrumbs-aside">
+   <a href="https://github.com/xuperchain/docs/edit/master/source/introduction/trusted_ledger_intro.rst" class="fa fa-github">
+      编辑此页</a>
+</li>
+
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>可信账本<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>XuperChain 可信账本基于 XuperChain 和百度Mesatee技术，实现了合约数据加密存储及链上密文运算等功能。具备性能高、编程复杂度低等特点。</p>
+</div></blockquote>
+<ol class="arabic simple">
+<li><p>密文存储：可信账本提供数据加解密功能，用户可将数据加密存储在合约中。</p></li>
+<li><p>权限管理：支持数据拥有者对数据所属权和使用权的细粒度管理。</p></li>
+<li><p>基本运算：支持密文加法，减法以及乘法，比较运算等，统一称为 <strong>隐私计算</strong> 算子。同时可以使用mesatee-core-standalone快速扩展算子，这些基本运算几乎可以满足用户对任何复杂计算功能的需求。</p></li>
+</ol>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="summary.html" class="btn btn-neutral float-right" title="总结" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="perfomance.html" class="btn btn-neutral float-left" title="性能" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+  <p>
+    © 版权所有 2021, xuper.
+
+
+  </p>
+  </div>
+    
+    
+    
+    利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用了 
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    
+    由 <a href="https://readthedocs.org">Read the Docs</a>开发. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
